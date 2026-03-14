@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next';
 import { categories } from '@/data/categories';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://onelist.com'; // Replace with actual production domain
 
