@@ -15,6 +15,7 @@ export const categories = [
     { id: 'porn', name: 'Porn', image: '/icons/adult.png', slug: '/porn', description: '18+ adult porn streaming platforms', isAdult: true, isHidden: true },
     { id: 'vpn', name: 'VPN', image: '/icons/vpn.png', slug: '/vpn', description: 'Best VPNs to protect your privacy' },
     { id: 'adblockers', name: 'AdBlockers', image: '/icons/adblockers.png', slug: '/adblockers', description: 'Tools to block annoying ads online' },
+    { id: 'domains', name: 'Domain Registrar', image: '/icons/domains.png', slug: '/domains', description: 'Find the best places to register and manage your domain names' },
     { id: 'aitools', name: 'AI Tools', image: '/icons/ai.png', slug: '/aitools', description: 'Discover the best AI productivity and creative tools' },
     // AI Subcategories (Hidden from Home Page)
     { id: 'ai-chat', name: 'AI Chat Tools', image: '/icons/ai-chat.png', slug: '/aitools/chat', description: 'Advanced AI chatbots and text models', isHidden: true },
