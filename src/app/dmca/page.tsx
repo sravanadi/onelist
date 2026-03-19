@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "DMCA Policy - StreamHub"
+    title: "DMCA Policy - OneList"
 };
 
 export default function DmcaPage() {
@@ -10,7 +10,7 @@ export default function DmcaPage() {
             <div className="prose prose-invert max-w-none text-muted-foreground space-y-6">
                 <div className="bg-primary/10 border border-primary/30 rounded-lg p-6 mb-8 text-white">
                     <p className="font-bold mb-2">Important Notice:</p>
-                    <p>StreamHub is an informational directory and search engine. <strong>We do not host, upload, or manage any video files, media, or copyrighted content on our servers.</strong> We simply provide links to third-party websites that are publicly available on the internet.</p>
+                    <p>OneList is an informational directory and search engine. <strong>We do not host, upload, or manage any video files, media, or copyrighted content on our servers.</strong> We simply provide links to third-party websites that are publicly available on the internet.</p>
                 </div>
 
                 <h2 className="text-2xl font-bold text-white mt-8 mb-4">Digital Millennium Copyright Act</h2>

@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Privacy Policy - StreamHub"
+    title: "Privacy Policy - OneList"
 };
 
 export default function PrivacyPage() {

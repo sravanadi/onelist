@@ -1,16 +1,16 @@
 export const metadata = {
-    title: "About StreamHub",
-    description: "Learn more about StreamHub, the ultimate directory for streaming sites."
+    title: "About OneList",
+    description: "Learn more about OneList, the ultimate directory for streaming sites."
 };
 
 export default function AboutPage() {
     return (
         <div className="max-w-4xl mx-auto px-4 py-16 min-h-screen">
-            <h1 className="text-4xl font-bold text-white mb-8">About StreamHub</h1>
+            <h1 className="text-4xl font-bold text-white mb-8">About OneList</h1>
 
             <div className="prose prose-invert max-w-none text-muted-foreground space-y-6">
                 <p className="text-lg">
-                    StreamHub is born out of a simple frustration: finding reliable, high-quality streaming sites is too hard.
+                    OneList is born out of a simple frustration: finding reliable, high-quality streaming sites is too hard.
                     The internet is full of broken links, malicious pop-ups, and outdated directories. We wanted to build something better.
                 </p>
 

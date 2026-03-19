@@ -1,6 +1,6 @@
 export const metadata = {
-    title: "Contact Us - StreamHub",
-    description: "Get in touch with the StreamHub team."
+    title: "Contact Us - OneList",
+    description: "Get in touch with the OneList team."
 };
 
 export default function ContactPage() {
