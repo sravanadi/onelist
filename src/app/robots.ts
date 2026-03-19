@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: ['/private/', '/admin/'],
         },
-        sitemap: 'https://onelist.com/sitemap.xml', // Replace with actual production domain
+        sitemap: 'https://onelist.pro/sitemap.xml',
     };
 }

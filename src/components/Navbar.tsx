@@ -6,8 +6,9 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center">
-                        <Link href="/" className="shrink-0 flex items-center">
-                            <span className="text-2xl font-bold text-primary">StreamHub</span>
+                        <Link href="/" className="shrink-0 flex items-center space-x-3">
+                            <img src="/icon.png" alt="OneList Icon" className="h-14 w-auto drop-shadow-lg" />
+                            <span className="text-2xl font-bold text-primary">OneList</span>
                         </Link>
                     </div>
                     <div className="flex items-center space-x-4">

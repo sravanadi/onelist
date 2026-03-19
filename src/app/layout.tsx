@@ -7,8 +7,12 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "StreamHub - Find the Best Streaming Sites",
-  description: "A curated directory for the best movies, anime, sports, and TV shows streaming sites.",
+  title: "onelist.pro - The Ultimate AI & Streaming Directory",
+  description: "A curated directory for the best AI tools, movies, anime, sports, and TV shows streaming sites. Find everything in one list.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

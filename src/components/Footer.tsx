@@ -6,10 +6,11 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-12">
                     <div className="col-span-1 md:col-span-2">
-                        <Link href="/" className="text-3xl font-black text-primary tracking-tighter hover:opacity-80 transition-opacity">StreamHub</Link>
-                        <p className="mt-6 text-muted-foreground text-base leading-relaxed max-w-sm">
-                            The ultimate curated directory for streaming sites. We help you discover the best platforms for movies, anime, and sports while prioritizing your digital safety.
-                        </p>
+                        <Link href="/" className="flex items-center space-x-4 text-4xl font-black text-primary tracking-tighter hover:opacity-80 transition-opacity">
+                            <img src="/icon.png" alt="OneList Icon" className="h-20 w-auto drop-shadow-xl" />
+                            <span>OneList</span>
+                        </Link>
+                            The ultimate curated directory for AI tools and streaming sites. We help you discover the best platforms for AI, movies, anime, and sports while prioritizing your digital safety.
                     </div>
 
                     <div>
@@ -42,7 +43,7 @@ export default function Footer() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-                    <p>&copy; {new Date().getFullYear()} StreamHub. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} OneList. All rights reserved.</p>
                 </div>
             </div>
         </footer>
