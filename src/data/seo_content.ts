@@ -67,6 +67,23 @@ export const seoData: Record<string, SEOContent> = {
             }
         ]
     },
+    'home_extended': {
+        title: "The Internet's Most Complete Free Streaming Directory",
+        sections: [
+            {
+                heading: "A Global Hub for Digital Discovery",
+                content: "OneList.pro is the premier, globally-accessible directory designed for users worldwide who seek a safe and streamlined entertainment experience. As a comprehensive streaming directory worldwide, OneList bridges the gap between massive community-managed lists and user-friendly accessibility. Whether you are searching for the best streaming sites 2026, high-definition movies, the latest anime releases, or live sports mirrors, our platform categorizes over 16+ distinct areas of interest. From niche manga readers and documentary hubs to essential privacy tools like VPNs and adblockers, we ensure every link is verified for stability and performance. Our mission is to empower the global community with direct, reliable access to the best content the web has to offer."
+            },
+            {
+                heading: "How OneList Differs: A Beginner-Friendly Approach",
+                content: "What sets OneList apart as a top FMHY alternative and yarrlist alternative is our commitment to a premium, minimalist UI that prioritizes the beginner's journey. Unlike cluttered spreadsheets or overwhelming megathreads, OneList provides a structured, visually intuitive interface that makes discovery effortless for everyone, regardless of technical expertise. We have eliminated the friction of complex navigation, replacing it with a curated experience that highlights quality over quantity. Our users don't just find links; they find a secure gateway to their favorite entertainment, backed by detailed metadata and a community-first philosophy that values time and ease of use."
+            },
+            {
+                heading: "Safety-First Streaming for Worldwide Users",
+                content: "We take a safety-first approach, emphasizing that while transparency in streaming is our goal, user protection is paramount. We strongly recommend all our global visitors utilize a robust VPN and a high-quality adblocker to eliminate intrusive scripts and ISP throttling, ensuring a private and uninterrupted viewing experience across all our recommended platforms. From the USA and UK to India and beyond, OneList.pro is your trusted compass in the ever-evolving landscape of digital media in 2026. By focusing on encrypted connections and secure browsing habits, we help you navigate the high seas of the internet with total confidence and peace of mind."
+            }
+        ]
+    },
     'aitools': {
         title: 'Complete 2026 AI Tools Directory & Links Hub',
         sections: [

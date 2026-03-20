@@ -185,5 +185,37 @@ export const CATEGORY_SEO_DATA: Record<string, { intro: CategorySeo }> = {
         "Globally accessible tools for every professional field"
       ]
     }
+  },
+  home: {
+    intro: {
+      title: "OneList.pro — The Internet's Most Complete Free Streaming Directory",
+      paragraphs: [],
+      faqs: [
+        {
+          question: "What is OneList.pro?",
+          answer: "OneList.pro is a professional, curated directory of the best free streaming, AI, and utility sites available on the internet in 2026. Designed for a global audience, we simplify the process of finding working mirrors for movies, anime, live sports, and software tools. Our mission is to provide a clean, secure, and user-friendly alternative to cluttered community lists, making high-quality digital discovery accessible to everyone worldwide."
+        },
+        {
+          question: "How is OneList different from FMHY?",
+          answer: "While FMHY (FreeMediaHeckYeah) is an incredible community-driven resource, OneList is designed with a 'UI-first' philosophy. We focus on a premium, minimalist interface that is easier for beginners to navigate compared to massive text-based wikis. As a focused FMHY alternative, we curate only the highest-quality, most stable links and provide detailed metadata, safety notes, and visual categorization to enhance your browsing experience."
+        },
+        {
+          question: "Are the sites on OneList safe?",
+          answer: "Every site listed in our directory undergoes a verification process for content reliability and server stability. However, because these are third-party platforms, we advocate for a zero-trust browsing model. OneList is a safety-first directory, meaning we prioritize links with fewer intrusive trackers and always remind our global users to employ professional-grade security tools like VPNs and adblockers before entering any external streaming portal."
+        },
+        {
+          question: "Do I need a VPN to use OneList?",
+          answer: "While you can browse OneList.pro itself without any special tools, we strongly recommend using a premium VPN when accessing external streaming or torrenting links from our directory. ISPs in many countries often throttle or block these mirrors. A VPN not only helps you bypass these regional restrictions but also encrypts your traffic and masks your IP address, ensuring your streaming habits remain private and secure from third-party monitoring."
+        },
+        {
+          question: "How often is OneList updated?",
+          answer: "Our team monitors the global streaming landscape daily. Links in the digital world can be dynamic, with domains often changing or mirrors going offline due to network shifts. We regularly test and update our database to ensure our 'best streaming sites 2026' lists remain current and reliable. If a major platform moves to a new domain, we aim to have the verified mirror updated in our directory within 24 hours."
+        },
+        {
+          question: "Is OneList free to use?",
+          answer: "Yes, OneList.pro is 100% free to access for all users worldwide. We do not require registration or any form of subscription to browse our 16+ categories of curated links. Our goal is to provide a free, high-quality public service that helps the global internet community discover better entertainment and productivity tools without the friction of paywalls or intrusive data collection."
+        }
+      ]
+    }
   }
 };

@@ -3,6 +3,8 @@ import CategoryCard from "@/components/CategoryCard";
 import { categories } from "@/data/categories";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
 import { seoData } from "@/data/seo_content";
+import { CATEGORY_SEO_DATA } from "@/data/category-seo";
+import FaqSection from "@/components/FaqSection";
 import { SEO_META } from "@/lib/seo-meta";
 import { getCanonicalUrl } from "@/lib/seo-utils";
 import { Metadata } from "next";
@@ -67,37 +69,56 @@ export default function Home() {
       </section>
 
 
-      {/* Home SEO Content */}
+      {/* Home SEO Deep Section (New) */}
       <section className="py-20 px-4 bg-background border-t border-border">
-        <div className="max-w-5xl mx-auto">
-          {(() => {
-            const content = seoData['default'];
-            return (
-              <div className="bg-card/50 border border-border rounded-2xl p-8 md:p-12">
-                <h2 className="text-4xl font-black text-white mb-10 text-center">{content.title}</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                  {content.sections.map((section, idx) => (
-                    <div key={idx}>
-                      <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                        <span className="w-1.5 h-8 bg-primary rounded-full"></span>
-                        {section.heading}
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed text-lg">
-                        {section.content}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <div className="mt-16 pt-8 border-t border-border text-center">
-                  <p className="text-gray-500 text-sm max-w-3xl mx-auto">
-                    Search keywords: free movie streaming sites 2026, best anime websites, live sports mirrors, secure vpn for streaming, adblocker for movies, 123movies alternatives, soap2night mirror, watch series online free.
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-card/30 border border-border/50 rounded-3xl p-8 md:p-16 backdrop-blur-sm">
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-12 leading-tight">
+              {seoData.home_extended.title}
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+              {seoData.home_extended.sections.map((section, idx) => (
+                <div key={idx} className="relative group">
+                  <div className="absolute -left-4 top-0 bottom-0 w-1 bg-primary/20 group-hover:bg-primary transition-colors rounded-full" />
+                  <h3 className="text-xl font-bold text-white mb-4 pl-2">{section.heading}</h3>
+                  <p className="text-muted-foreground leading-relaxed font-medium">
+                    {section.content}
                   </p>
                 </div>
+              ))}
+            </div>
+
+            {/* Keyword Cloud */}
+            <div className="pt-12 border-t border-border/50">
+              <p className="text-xs font-bold text-primary/40 uppercase tracking-[0.3em] mb-4">Targeted Discovery for 2026</p>
+              <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-500 font-medium italic">
+                <span>free streaming directory</span>
+                <span className="w-1 h-1 bg-border rounded-full self-center" />
+                <span>best streaming sites 2026</span>
+                <span className="w-1 h-1 bg-border rounded-full self-center" />
+                <span>streaming directory worldwide</span>
+                <span className="w-1 h-1 bg-border rounded-full self-center" />
+                <span>FMHY alternative</span>
+                <span className="w-1 h-1 bg-border rounded-full self-center" />
+                <span>yarrlist alternative</span>
               </div>
-            );
-          })()}
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Home FAQ Section (New) */}
+      {CATEGORY_SEO_DATA.home?.intro.faqs && (
+        <section className="py-12 bg-background">
+          <div className="max-w-7xl mx-auto px-4">
+            <FaqSection 
+              items={CATEGORY_SEO_DATA.home.intro.faqs} 
+              title="Frequently Asked Questions"
+            />
+          </div>
+        </section>
+      )}
 
     </div>
   );
