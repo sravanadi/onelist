@@ -186,6 +186,66 @@ export const CATEGORY_SEO_DATA: Record<string, { intro: CategorySeo }> = {
       ]
     }
   },
+  manga: {
+    intro: {
+      title: "Best Free Manga Sites 2026 — Read Manga Online Globally",
+      paragraphs: [
+        "Discover the best free manga sites in 2026 for reading premium manga, manhwa, and manhua online. Our curated directory features the most stable mirrors for popular platforms like MangaDex, MangaFire, and MangaNato, providing high-quality scans and translations for a global audience.",
+        "Whether you're looking for the latest Shonen Jump releases or obscure indie gems, these platforms offer diverse libraries accessible without any subscription or sign-up. We verify these sources daily to ensure they remain safe and functional for users worldwide."
+      ],
+      bullets: [
+        "High-quality scans for Manga, Manhwa, and Manhua",
+        "Fast-loading readers with minimalist interfaces",
+        "Safe and verified mirrors for major platforms",
+        "Daily updates on new chapter releases"
+      ]
+    }
+  },
+  music: {
+    intro: {
+      title: "Best Free Music Sites 2026 — Stream and Download Music Online",
+      paragraphs: [
+        "Explore a comprehensive directory of free music sites and tools for 2026. From high-quality Spotify downloaders to YouTube to MP3 converters and open-source players like Spotube, we help you find the best ways to enjoy and download your favourite tracks worldwide.",
+        "Our list focuses on privacy-first tools and community-trusted platforms that allow you to access music across multiple services without paywalls. Whether you're a casual listener or a dedicated audiophile, these resources are curated for stability and ease of use."
+      ],
+      bullets: [
+        "Premium Spotify and YouTube music downloaders",
+        "Open-source and privacy-focused music players",
+        "Multi-platform tools for lossless audio discovery",
+        "Free and accessible music hubs for a global audience"
+      ]
+    }
+  },
+  "live-tv": {
+    intro: {
+      title: "Free Live TV Streaming 2026 — Watch Global TV Channels Online",
+      paragraphs: [
+        "Stay connected with live news, entertainment, and sports from around the globe with our curated list of free live TV sites for 2026. We provide access to stable IPTV portals and web-based players that stream US, UK, and international channels for free.",
+        "Finding reliable live TV mirrors can be difficult due to regional blocks. Our directory features verified links for platforms like DaddyLive and The TV App, ensuring that users worldwide can watch their favourite broadcasts without expensive cable subscriptions."
+      ],
+      bullets: [
+        "Live US, UK, and International TV channels",
+        "Stable IPTV portals and web-based players",
+        "Global news, sports, and entertainment streams",
+        "Daily verified mirrors for maximum uptime"
+      ]
+    }
+  },
+  ebooks: {
+    intro: {
+      title: "Best Free eBook Sites 2026 — Download PDF, EPUB, and Audiobooks",
+      paragraphs: [
+        "Access the world's knowledge with our directory of the best free eBook sites and audiobook platforms for 2026. From massive shadow libraries like Z-Library and Anna's Archive to specialized PDF readers, we connect you with millions of free titles.",
+        "Whether you're looking for academic papers, the latest bestsellers, or classic literature, these resources provide free downloads in PDF, EPUB, and audio formats. Our list is curated for educators, students, and book lovers worldwide."
+      ],
+      bullets: [
+        "Massive libraries for free eBooks and Audiobooks",
+        "Support for multiple formats: PDF, EPUB, MP3",
+        "Verified mirrors for global shadow libraries",
+        "High-quality, open-source eBook reader software"
+      ]
+    }
+  },
   home: {
     intro: {
       title: "OneList.pro — The Internet's Most Complete Free Streaming Directory",

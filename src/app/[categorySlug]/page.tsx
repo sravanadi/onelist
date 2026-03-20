@@ -111,17 +111,18 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                             <>
                                 {(() => {
                                     const categorySeo = CATEGORY_SEO_DATA[category.id]?.intro;
-                                    if (!categorySeo) return null;
                                     return (
                                         <>
-                                            <CategoryIntro 
-                                              {...categorySeo}
-                                              bullets={categorySeo.bullets || []}
-                                            />
+                                            {categorySeo && (
+                                                <CategoryIntro 
+                                                  {...categorySeo}
+                                                  bullets={categorySeo.bullets || []}
+                                                />
+                                            )}
                                             <LegalDisclaimer />
                                             <FilteredSiteList initialSites={sites} categorySlug={category.slug.replace('/', '')} />
                                             <SafetyNote />
-                                            {categorySeo.faqs && (
+                                            {categorySeo && categorySeo.faqs && (
                                                 <FaqSection items={categorySeo.faqs} />
                                             )}
                                         </>
