@@ -1,7 +1,39 @@
 import { notFound } from 'next/navigation';
 import { blogPosts, getPostBySlug } from '@/data/blog';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/lib/seo-utils';
+import JsonLd from '@/components/JsonLd';
+import { Metadata } from 'next';
 
 import Link from 'next/link';
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const post = getPostBySlug(slug);
+
+    if (!post) return {};
+
+    const canonical = getCanonicalUrl(`/blog/${slug}`);
+
+    return {
+        title: `${post.title} — OneList Blog`,
+        description: post.excerpt,
+        alternates: {
+            canonical: canonical,
+        },
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            url: canonical,
+            type: 'article',
+            publishedTime: post.date,
+            authors: [post.author],
+        },
+        twitter: {
+            title: post.title,
+            description: post.excerpt,
+        },
+    };
+}
 
 export function generateStaticParams() {
     return blogPosts.map((post) => ({
@@ -17,8 +49,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         notFound();
     }
 
+    const breadcrumbSchema = getBreadcrumbSchema(post.title, `/blog/${slug}`);
+
     return (
         <div className="bg-background min-h-screen">
+            <JsonLd data={breadcrumbSchema} />
             <article className="max-w-3xl mx-auto px-4 py-16">
                 {/* Breadcrumb */}
                 <div className="flex items-center text-sm text-muted-foreground mb-8">

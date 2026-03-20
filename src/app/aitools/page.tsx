@@ -3,17 +3,36 @@ import Image from 'next/image';
 import { categories } from '@/data/categories';
 import { featuredSites } from '@/data/sites';
 
-export const metadata = {
-  title: 'AI Tools Directory - Complete List of AI Chat, Image, Video & Writing Tools',
-  description: 'Explore the ultimate directory of AI-powered tools. From LLMs and image generators to AI coding assistants and video creators.',
+import { SEO_META } from "@/lib/seo-meta";
+import { getCanonicalUrl, getBreadcrumbSchema } from "@/lib/seo-utils";
+import JsonLd from "@/components/JsonLd";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: SEO_META.aitools.title,
+  description: SEO_META.aitools.description,
+  alternates: {
+    canonical: getCanonicalUrl("/aitools"),
+  },
+  openGraph: {
+    title: SEO_META.aitools.title,
+    description: SEO_META.aitools.description,
+    url: getCanonicalUrl("/aitools"),
+  },
+  twitter: {
+    title: SEO_META.aitools.title,
+    description: SEO_META.aitools.description,
+  },
 };
 
 export default function AIToolsHub() {
   // Filter for AI subcategories (excluding the main hub itself)
   const aiSubcategories = categories.filter(c => c.id.startsWith('ai-'));
+  const breadcrumbSchema = getBreadcrumbSchema("AI Tools", "/aitools");
 
   return (
     <div className="min-h-screen bg-background text-white pt-24 pb-16 px-4 md:px-8">
+      <JsonLd data={breadcrumbSchema} />
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-12 text-center">

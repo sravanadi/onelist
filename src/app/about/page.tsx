@@ -1,6 +1,22 @@
-export const metadata = {
-    title: "About OneList",
-    description: "Learn more about OneList, the ultimate directory for streaming sites."
+import { SEO_META } from "@/lib/seo-meta";
+import { getCanonicalUrl } from "@/lib/seo-utils";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: SEO_META.about.title,
+    description: SEO_META.about.description,
+    alternates: {
+        canonical: getCanonicalUrl("/about"),
+    },
+    openGraph: {
+        title: SEO_META.about.title,
+        description: SEO_META.about.description,
+        url: getCanonicalUrl("/about"),
+    },
+    twitter: {
+        title: SEO_META.about.title,
+        description: SEO_META.about.description,
+    },
 };
 
 export default function AboutPage() {

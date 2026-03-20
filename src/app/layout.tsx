@@ -3,8 +3,34 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "OneList",
+  "url": "https://onelist.pro",
+  "description": "The ultimate curated directory of free streaming sites, anime, torrents, AI tools, VPNs and more.",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://onelist.pro/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "OneList",
+  "url": "https://onelist.pro",
+  "logo": "https://onelist.pro/icon.png",
+  "sameAs": []
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://onelist.pro"),
@@ -27,18 +53,22 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: "/",
+    canonical: "https://onelist.pro",
   },
   openGraph: {
-    title: "onelist.pro - The Ultimate AI & Streaming Directory",
-    description: "The ultimate curated list of AI tools and streaming services.",
+    title: {
+      default: "OneList — Free Streaming Sites, Anime, Torrents & AI Tools Directory 2026",
+      template: "%s | OneList",
+    },
+    description: "The ultimate curated directory of free streaming sites, anime, torrents, AI tools, VPNs and more.",
     url: "https://onelist.pro",
-    siteName: "OneList Pro",
+    siteName: "OneList",
     images: [
       {
-        url: "/logo.png",
-        width: 800,
-        height: 600,
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "OneList - The Ultimate Streaming & AI Tools Directory",
       },
     ],
     locale: "en_US",
@@ -46,9 +76,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "onelist.pro - The Ultimate AI & Streaming Directory",
-    description: "The ultimate curated list of AI tools and streaming services.",
-    images: ["/logo.png"],
+    title: {
+      default: "OneList — Free Streaming Sites, Anime, Torrents & AI Tools Directory 2026",
+      template: "%s | OneList",
+    },
+    description: "The ultimate curated directory of free streaming sites, anime, torrents, AI tools, VPNs and more.",
+    images: ["/og-default.png"],
+    site: "@onelistpro",
   },
   robots: {
     index: true,
@@ -74,6 +108,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen flex flex-col`}>
+        <JsonLd data={websiteSchema} />
+        <JsonLd data={organizationSchema} />
         <Navbar />
         <main className="grow">
           {children}

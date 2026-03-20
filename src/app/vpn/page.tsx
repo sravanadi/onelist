@@ -3,15 +3,35 @@ import SiteCard from '@/components/SiteCard';
 import Link from 'next/link';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 
-export const metadata = {
-    title: "Best VPNs for Streaming in 2026",
-    description: "Protect your privacy and unblock international streaming sites with these top-rated VPN providers."
+import { SEO_META } from "@/lib/seo-meta";
+import { getCanonicalUrl, getBreadcrumbSchema } from "@/lib/seo-utils";
+import JsonLd from "@/components/JsonLd";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: SEO_META.vpn.title,
+  description: SEO_META.vpn.description,
+  alternates: {
+    canonical: getCanonicalUrl("/vpn"),
+  },
+  openGraph: {
+    title: SEO_META.vpn.title,
+    description: SEO_META.vpn.description,
+    url: getCanonicalUrl("/vpn"),
+  },
+  twitter: {
+    title: SEO_META.vpn.title,
+    description: SEO_META.vpn.description,
+  },
 };
 
 export default function VpnPage() {
     const vpns = getSitesByCategory('vpn');
+    const breadcrumbSchema = getBreadcrumbSchema("VPN", "/vpn");
+
     return (
         <div className="flex flex-col min-h-screen bg-background text-white">
+            <JsonLd data={breadcrumbSchema} />
             {/* Hero Section */}
             <section className="bg-card border-b border-border py-16 px-4">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 text-center md:text-left">

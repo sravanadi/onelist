@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { categories } from '@/data/categories';
@@ -7,6 +6,38 @@ import FilteredSiteList from '@/components/FilteredSiteList';
 import Link from 'next/link';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { seoData } from '@/data/seo_content';
+import { SEO_META, SEOMetaKey } from '@/lib/seo-meta';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/lib/seo-utils';
+import JsonLd from '@/components/JsonLd';
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: Promise<{ subCategorySlug: string }> }): Promise<Metadata> {
+    const { subCategorySlug } = await params;
+    const fullSlug = `/aitools/${subCategorySlug}`;
+    const category = categories.find(c => c.slug === fullSlug);
+
+    if (!category) return {};
+
+    const meta = SEO_META[category.id as SEOMetaKey] || SEO_META.aitools;
+    const canonical = getCanonicalUrl(category.slug);
+
+    return {
+        title: meta.title,
+        description: meta.description,
+        alternates: {
+            canonical: canonical,
+        },
+        openGraph: {
+            title: meta.title,
+            description: meta.description,
+            url: canonical,
+        },
+        twitter: {
+            title: meta.title,
+            description: meta.description,
+        },
+    };
+}
 
 export function generateStaticParams() {
     // Only generate for AI subcategories
@@ -32,8 +63,22 @@ export default async function AISubCategoryPage({ params }: { params: Promise<{ 
     const sites = getSitesByCategory(category.id);
     const content = seoData[category.id] || seoData['aitools'];
 
+    const itemListSchema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": `Best ${category.name} in 2026`,
+        "description": category.description,
+        "url": `https://onelist.pro${category.slug}`,
+        "numberOfItems": sites.length,
+        "itemListOrder": "https://schema.org/ItemListOrderAscending"
+    };
+
+    const breadcrumbSchema = getBreadcrumbSchema(category.name, category.slug);
+
     return (
         <div className="flex flex-col min-h-screen bg-background">
+            <JsonLd data={itemListSchema} />
+            <JsonLd data={breadcrumbSchema} />
             {/* Category Hero */}
             <section className="bg-card border-b border-border py-16 px-4">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6">

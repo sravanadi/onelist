@@ -1,6 +1,22 @@
-export const metadata = {
-    title: "Contact Us - OneList",
-    description: "Get in touch with the OneList team."
+import { SEO_META } from "@/lib/seo-meta";
+import { getCanonicalUrl } from "@/lib/seo-utils";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: SEO_META.contact.title,
+    description: SEO_META.contact.description,
+    alternates: {
+        canonical: getCanonicalUrl("/contact"),
+    },
+    openGraph: {
+        title: SEO_META.contact.title,
+        description: SEO_META.contact.description,
+        url: getCanonicalUrl("/contact"),
+    },
+    twitter: {
+        title: SEO_META.contact.title,
+        description: SEO_META.contact.description,
+    },
 };
 
 export default function ContactPage() {

@@ -2,9 +2,25 @@ import Link from 'next/link';
 import { blogPosts } from '@/data/blog';
 
 
-export const metadata = {
-    title: "Blog - StreamHub",
-    description: "Read the latest news, guides, and updates about the streaming world."
+import { SEO_META } from "@/lib/seo-meta";
+import { getCanonicalUrl } from "@/lib/seo-utils";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: SEO_META.blog.title,
+    description: SEO_META.blog.description,
+    alternates: {
+        canonical: getCanonicalUrl("/blog"),
+    },
+    openGraph: {
+        title: SEO_META.blog.title,
+        description: SEO_META.blog.description,
+        url: getCanonicalUrl("/blog"),
+    },
+    twitter: {
+        title: SEO_META.blog.title,
+        description: SEO_META.blog.description,
+    },
 };
 
 export default function BlogIndexPage() {
@@ -12,7 +28,7 @@ export default function BlogIndexPage() {
         <div className="flex flex-col min-h-screen bg-background">
             <section className="bg-card border-b border-border py-16 px-4">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h1 className="text-4xl font-bold text-white mb-4">StreamHub Blog</h1>
+                    <h1 className="text-4xl font-bold text-white mb-4">OneList Blog</h1>
                     <p className="text-muted-foreground max-w-2xl mx-auto">
                         Tips, tricks, and guides for getting the most out of your streaming experience safely and for free.
                     </p>

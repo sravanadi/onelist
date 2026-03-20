@@ -1,5 +1,22 @@
-export const metadata = {
-    title: "Privacy Policy - OneList"
+import { SEO_META } from "@/lib/seo-meta";
+import { getCanonicalUrl } from "@/lib/seo-utils";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: SEO_META.privacy.title,
+    description: SEO_META.privacy.description,
+    alternates: {
+        canonical: getCanonicalUrl("/privacy"),
+    },
+    openGraph: {
+        title: SEO_META.privacy.title,
+        description: SEO_META.privacy.description,
+        url: getCanonicalUrl("/privacy"),
+    },
+    twitter: {
+        title: SEO_META.privacy.title,
+        description: SEO_META.privacy.description,
+    },
 };
 
 export default function PrivacyPage() {

@@ -8,6 +8,33 @@ import FilteredSiteList from '@/components/FilteredSiteList';
 import Link from 'next/link';
 import LegalDisclaimer from '@/components/LegalDisclaimer';
 import { seoData } from '@/data/seo_content';
+import { SEO_META, SEOMetaKey } from '@/lib/seo-meta';
+import { getCanonicalUrl, getBreadcrumbSchema } from '@/lib/seo-utils';
+import JsonLd from '@/components/JsonLd';
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: Promise<{ categorySlug: string }> }): Promise<Metadata> {
+    const { categorySlug } = await params;
+    const meta = SEO_META[categorySlug as SEOMetaKey] || SEO_META.home;
+    const canonical = getCanonicalUrl(categorySlug);
+
+    return {
+        title: meta.title,
+        description: meta.description,
+        alternates: {
+            canonical: canonical,
+        },
+        openGraph: {
+            title: meta.title,
+            description: meta.description,
+            url: canonical,
+        },
+        twitter: {
+            title: meta.title,
+            description: meta.description,
+        },
+    };
+}
 
 
 export function generateStaticParams() {
@@ -31,8 +58,22 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
     const sites = getSitesByCategory(category.id);
 
+    const itemListSchema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": `Best Free ${category.name} Sites 2026`,
+        "description": category.description,
+        "url": `https://onelist.pro${category.slug}`,
+        "numberOfItems": sites.length,
+        "itemListOrder": "https://schema.org/ItemListOrderAscending"
+    };
+
+    const breadcrumbSchema = getBreadcrumbSchema(category.name, category.slug);
+
     return (
         <div className="flex flex-col min-h-screen bg-background">
+            <JsonLd data={itemListSchema} />
+            <JsonLd data={breadcrumbSchema} />
             {/* Category Hero */}
             <section className="bg-card border-b border-border py-16 px-4">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6">

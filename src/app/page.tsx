@@ -3,6 +3,26 @@ import CategoryCard from "@/components/CategoryCard";
 import { categories } from "@/data/categories";
 import LegalDisclaimer from "@/components/LegalDisclaimer";
 import { seoData } from "@/data/seo_content";
+import { SEO_META } from "@/lib/seo-meta";
+import { getCanonicalUrl } from "@/lib/seo-utils";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: SEO_META.home.title,
+  description: SEO_META.home.description,
+  alternates: {
+    canonical: getCanonicalUrl("/"),
+  },
+  openGraph: {
+    title: SEO_META.home.title,
+    description: SEO_META.home.description,
+    url: getCanonicalUrl("/"),
+  },
+  twitter: {
+    title: SEO_META.home.title,
+    description: SEO_META.home.description,
+  },
+};
 
 export default function Home() {
 
