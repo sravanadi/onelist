@@ -33,6 +33,15 @@ export default function Footer() {
                     </div>
 
                     <div>
+                        <h3 className="text-white font-bold uppercase tracking-widest text-xs mb-6 opacity-50">Regional</h3>
+                        <ul className="space-y-4 text-sm text-muted-foreground">
+                            <li><Link href="/streaming/united-states" className="hover:text-primary hover:translate-x-1 inline-block transition-all">United States</Link></li>
+                            <li><Link href="/streaming/united-kingdom" className="hover:text-primary hover:translate-x-1 inline-block transition-all">United Kingdom</Link></li>
+                            <li><Link href="/streaming/india" className="hover:text-primary hover:translate-x-1 inline-block transition-all">India</Link></li>
+                        </ul>
+                    </div>
+
+                    <div>
                         <h3 className="text-white font-bold uppercase tracking-widest text-xs mb-6 opacity-50">Compliance</h3>
                         <ul className="space-y-4 text-sm text-muted-foreground">
                             <li><Link href="/contact" className="hover:text-primary hover:translate-x-1 inline-block transition-all">Contact Hub</Link></li>

@@ -138,6 +138,18 @@ export const SEO_META = {
   "ai-education": {
     title: "Best AI Education & Learning Tools 2026 — OneList",
     description: "AI-powered learning resources and tools for students, teachers, and lifelong learners."
+  },
+  "united-states": {
+    title: "Best Free Streaming Sites in USA 2026 — Watch Movies & TV in the United States",
+    description: "The ultimate guide to free streaming sites in the USA for 2026. Discover the best working platforms for American audiences with high-speed US mirrors."
+  },
+  "united-kingdom": {
+    title: "Best Free Streaming Sites in UK 2026 — Stream Movies & Sports in the United Kingdom",
+    description: "Top-rated free streaming sites for UK users in 2026. Access working mirrors for movies, TV shows, and live sports across the United Kingdom."
+  },
+  india: {
+    title: "Best Free Streaming Sites in India 2026 — Watch Bollywood, Cricket & More",
+    description: "The best free streaming sites for Indian viewers in 2026. Curated links for Bollywood movies, live cricket, and international content with India-optimized mirrors."
   }
 } as const;
 

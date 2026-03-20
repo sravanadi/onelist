@@ -12,6 +12,10 @@ import { SEO_META, SEOMetaKey } from '@/lib/seo-meta';
 import { getCanonicalUrl, getBreadcrumbSchema } from '@/lib/seo-utils';
 import JsonLd from '@/components/JsonLd';
 import { Metadata } from 'next';
+import CategoryIntro from '@/components/CategoryIntro';
+import SafetyNote from '@/components/SafetyNote';
+import FaqSection from '@/components/FaqSection';
+import { CATEGORY_SEO_DATA } from '@/data/category-seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ categorySlug: string }> }): Promise<Metadata> {
     const { categorySlug } = await params;
@@ -105,38 +109,26 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                         )}
                         {(category.id !== 'adult' || sites.length > 0) && (
                             <>
-                                <LegalDisclaimer />
-                                <FilteredSiteList initialSites={sites} categorySlug={category.slug.replace('/', '')} />
+                                {(() => {
+                                    const categorySeo = CATEGORY_SEO_DATA[category.id]?.intro;
+                                    if (!categorySeo) return null;
+                                    return (
+                                        <>
+                                            <CategoryIntro 
+                                              {...categorySeo}
+                                              bullets={categorySeo.bullets || []}
+                                            />
+                                            <LegalDisclaimer />
+                                            <FilteredSiteList initialSites={sites} categorySlug={category.slug.replace('/', '')} />
+                                            <SafetyNote />
+                                            {categorySeo.faqs && (
+                                                <FaqSection items={categorySeo.faqs} />
+                                            )}
+                                        </>
+                                    );
+                                })()}
                             </>
                         )}
-
-                        {/* SEO Content Block */}
-                        {(() => {
-                            const content = seoData[category.id] || seoData['default'];
-                            return (
-                                <div className="bg-card border border-border rounded-xl p-8 mt-12">
-                                    <h2 className="text-3xl font-bold text-white mb-8 border-b border-border pb-4">{content.title}</h2>
-                                    <div className="space-y-12">
-                                        {content.sections.map((section, idx) => (
-                                            <div key={idx} className="group">
-                                                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
-                                                    <span className="w-1 h-6 bg-primary rounded-full"></span>
-                                                    {section.heading}
-                                                </h3>
-                                                <p className="text-muted-foreground leading-relaxed text-base italic group-hover:text-gray-300 transition-colors">
-                                                    {section.content}
-                                                </p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                    <div className="mt-12 pt-8 border-t border-border text-center">
-                                        <p className="text-sm text-muted-foreground">
-                                            Keywords: streaming, {category.name.toLowerCase()}, movies online, free tv, safe streaming, vpn for {category.name.toLowerCase()}, no registration streaming sites 2026.
-                                        </p>
-                                    </div>
-                                </div>
-                            );
-                        })()}
                     </div>
 
                     {/* Sidebar */}

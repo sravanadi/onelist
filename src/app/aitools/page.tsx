@@ -7,6 +7,9 @@ import { SEO_META } from "@/lib/seo-meta";
 import { getCanonicalUrl, getBreadcrumbSchema } from "@/lib/seo-utils";
 import JsonLd from "@/components/JsonLd";
 import { Metadata } from "next";
+import CategoryIntro from '@/components/CategoryIntro';
+import SafetyNote from '@/components/SafetyNote';
+import { CATEGORY_SEO_DATA } from '@/data/category-seo';
 
 export const metadata: Metadata = {
   title: SEO_META.aitools.title,
@@ -43,6 +46,14 @@ export default function AIToolsHub() {
             The World&apos;s Most Complete Directory of Artificial Intelligence Tools, Models, and Software.
           </p>
         </div>
+
+        {/* SEO Category Intro */}
+        {CATEGORY_SEO_DATA.aitools && (
+          <CategoryIntro 
+            {...CATEGORY_SEO_DATA.aitools.intro} 
+            bullets={CATEGORY_SEO_DATA.aitools.intro.bullets || []} 
+          />
+        )}
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -89,6 +100,11 @@ export default function AIToolsHub() {
             );
           })}
         </div>
+
+        {/* SEO Safety Note */}
+        {CATEGORY_SEO_DATA.aitools && (
+          <SafetyNote />
+        )}
 
         {/* Bottom Banner Section */}
         <div className="mt-20 p-12 rounded-3xl bg-linear-to-r from-[#141414] to-[#1a1a1a] border border-white/5 text-center relative overflow-hidden">

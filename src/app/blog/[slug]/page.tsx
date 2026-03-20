@@ -51,12 +51,50 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
     const breadcrumbSchema = getBreadcrumbSchema(post.title, `/blog/${slug}`);
 
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": post.coverImage.startsWith('/') ? `https://onelist.pro${post.coverImage}` : post.coverImage,
+        "datePublished": post.date,
+        "dateModified": post.date, // User wanted "Last updated" visibility
+        "author": {
+            "@type": "Organization",
+            "name": "OneList Editorial Team",
+            "url": "https://onelist.pro"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "OneList",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://onelist.pro/logo.png"
+            }
+        }
+    };
+
+    const faqSchema = post.faqs ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": post.faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    } : null;
+
     return (
         <div className="bg-background min-h-screen">
             <JsonLd data={breadcrumbSchema} />
+            <JsonLd data={articleSchema} />
+            {faqSchema && <JsonLd data={faqSchema} />}
             <article className="max-w-3xl mx-auto px-4 py-16">
                 {/* Breadcrumb */}
-                <div className="flex items-center text-sm text-muted-foreground mb-8">
+                <div className="flex items-center text-sm text-muted-foreground mb-4">
                     <Link href="/" className="hover:text-white transition-colors">Home</Link>
                     <span className="mx-2">›</span>
                     <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
@@ -64,27 +102,34 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     <span className="text-gray-400 truncate">{post.title}</span>
                 </div>
 
+                <div className="flex items-center gap-4 text-xs font-bold text-primary uppercase tracking-widest mb-6">
+                    {post.readingTime && <span>{post.readingTime}</span>}
+                    {post.readingTime && <span>•</span>}
+                    <span>Last Updated: {new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                </div>
+
                 <h1 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
                     {post.title}
                 </h1>
 
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-10 pb-8 border-b border-border">
-                    <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center font-bold text-white text-xs">
-                            {post.author.charAt(0)}
-                        </div>
-                        <span>{post.author}</span>
-                    </div>
-                    <span>•</span>
-                    <span>{new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                </div>
-
-                {/* Article Content */}
                 <div
                     className="prose prose-invert prose-lg max-w-none text-[#cccccc] prose-headings:text-white prose-a:text-primary hover:prose-a:text-[#b0060e]"
                     dangerouslySetInnerHTML={{ __html: post.content }}
                 />
 
+                {post.faqs && (
+                    <div className="mt-16 pt-16 border-t border-border">
+                        <h2 className="text-3xl font-black text-white mb-8">Frequently Asked Questions</h2>
+                        <div className="space-y-8">
+                            {post.faqs.map((faq, i) => (
+                                <div key={i} className="bg-card/50 border border-border p-6 rounded-2xl">
+                                    <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
+                                    <p className="text-gray-400 leading-relaxed font-medium">{faq.answer}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </article>
 
             {/* Related Posts */}

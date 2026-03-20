@@ -39,7 +39,7 @@ export default function Home() {
 
         <div className="relative z-10 text-center max-w-4xl mx-auto w-full">
           <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
-            Find the Best <span className="text-primary">Streaming Sites</span>
+            Find the Best <span className="text-primary">Free Streaming Sites</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
             The ultimate directory for free and premium movies, TV shows, anime, sports, and more. Stop searching and start watching.
