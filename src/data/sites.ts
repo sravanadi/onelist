@@ -4328,7 +4328,18 @@ export const featuredSites: Site[] = [
   { id: "flippa", name: "Flippa", url: "https://flippa.com", logo: "/placeholder.png", description: "Buy websites + domains.", categoryId: "domains", tags: ["Premium", "Marketplace"], badges: ["Paid"], rating: 4.6, addedAt: "2026-03-15", language: "English" },
   { id: "dan-dot-com", name: "Dan.com", url: "https://dan.com", logo: "/placeholder.png", description: "Domain marketplace.", categoryId: "domains", tags: ["Premium", "Marketplace"], badges: ["Paid"], rating: 4.8, addedAt: "2026-03-15", language: "English" },
   { id: "namebright", name: "NameBright", url: "https://namebright.com", logo: "/placeholder.png", description: "Domain auctions.", categoryId: "domains", tags: ["Premium", "Marketplace"], badges: ["Paid"], rating: 4.4, addedAt: "2026-03-15", language: "English" },
-
+  
+  // Manga Sites - 2026 Batch
+  { id: "comix-to", name: "Comix.to", url: "https://comix.to", logo: "/placeholder.png", description: "Read premium comics and manga online for free.", categoryId: "manga", tags: ["Manga", "Comics"], badges: ["Free"], rating: 4.7, addedAt: "2026-03-20", language: "English" },
+  { id: "mangafire-to", name: "MangaFire", url: "https://mangafire.to", logo: "/placeholder.png", description: "High-quality manga reading platform with a massive library.", categoryId: "manga", tags: ["Manga", "Popular"], badges: ["Free", "Popular"], rating: 4.8, addedAt: "2026-03-20", language: "English" },
+  { id: "mangahaven-net", name: "MangaHaven", url: "https://mangahaven.net", logo: "/placeholder.png", description: "Your safe haven for reading manga and manhwa online.", categoryId: "manga", tags: ["Manga", "Manhwa"], badges: ["Free"], rating: 4.6, addedAt: "2026-03-20", language: "English" },
+  { id: "mangataro-org", name: "MangaTaro", url: "https://mangataro.org", logo: "/placeholder.png", description: "Discover new manga titles and read chapters instantly.", categoryId: "manga", tags: ["Manga"], badges: ["Free"], rating: 4.5, addedAt: "2026-03-20", language: "English" },
+  { id: "mangadex-org", name: "MangaDex", url: "https://mangadex.org", logo: "/placeholder.png", description: "The world's largest community-driven manga library.", categoryId: "manga", tags: ["Manga", "Community"], badges: ["Free", "Popular"], rating: 4.9, addedAt: "2026-03-20", language: "Multiple" },
+  { id: "allmanga-to", name: "AllManga", url: "https://allmanga.to", logo: "/placeholder.png", description: "Streamlined manga reading experience with daily updates.", categoryId: "manga", tags: ["Manga"], badges: ["Free"], rating: 4.6, addedAt: "2026-03-20", language: "English" },
+  { id: "mangago-me", name: "MangaGo", url: "https://mangago.me", logo: "/placeholder.png", description: "Popular manga portal with social features and comments.", categoryId: "manga", tags: ["Manga", "Social"], badges: ["Free", "Popular"], rating: 4.7, addedAt: "2026-03-20", language: "English" },
+  { id: "weebcentral-com", name: "WeebCentral", url: "https://weebcentral.com", logo: "/placeholder.png", description: "Central hub for weebs to read manga and discuss series.", categoryId: "manga", tags: ["Manga", "Community"], badges: ["Free"], rating: 4.5, addedAt: "2026-03-20", language: "English" },
+  { id: "manganato-gg", name: "MangaNato", url: "https://manganato.gg", logo: "/placeholder.png", description: "Fast-loading manga reader with a huge database.", categoryId: "manga", tags: ["Manga"], badges: ["Free", "Popular"], rating: 4.8, addedAt: "2026-03-20", language: "English" },
+  { id: "kagane-org", name: "Kagane", url: "https://kagane.org", logo: "/placeholder.png", description: "Minimalist manga reader for a focused reading experience.", categoryId: "manga", tags: ["Manga", "Lightweight"], badges: ["Free"], rating: 4.4, addedAt: "2026-03-20", language: "English" },
 ];
 
 // Helper to get sites by category
