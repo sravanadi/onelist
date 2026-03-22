@@ -89,21 +89,7 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Keyword Cloud */}
-            <div className="pt-12 border-t border-border/50">
-              <p className="text-xs font-bold text-primary/40 uppercase tracking-[0.3em] mb-4">Targeted Discovery for 2026</p>
-              <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-gray-500 font-medium italic">
-                <span>free streaming directory</span>
-                <span className="w-1 h-1 bg-border rounded-full self-center" />
-                <span>best streaming sites 2026</span>
-                <span className="w-1 h-1 bg-border rounded-full self-center" />
-                <span>streaming directory worldwide</span>
-                <span className="w-1 h-1 bg-border rounded-full self-center" />
-                <span>FMHY alternative</span>
-                <span className="w-1 h-1 bg-border rounded-full self-center" />
-                <span>yarrlist alternative</span>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>

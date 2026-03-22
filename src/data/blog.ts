@@ -73,7 +73,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Conclusion</h2>
 <p>The search for a <strong>yarrlist alternative</strong> in 2026 doesn't have to be a gamble. While platforms like FMHY and the Reddit wiki offer incredible depth, the need for a more curated, user-friendly, and all-encompassing directory has led to the rise of OneList.pro. By focusing on quality over quantity and providing a suite of productivity tools alongside entertainment, OneList has redefined what a streaming directory can be. Explore our categories today and discover why thousands of users worldwide have made the switch to the internet's most comprehensive link directory.</p>
-        `,
+        \n\n<p><i>Written by the OneList Editorial Team — a group of digital privacy advocates and streaming enthusiasts dedicated to curating the web\'s best free entertainment and productivity resources. All links are manually reviewed before listing.</i></p>`,
         faqs: [
             {
                 question: 'What happened to Yarrlist?',
@@ -174,7 +174,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Conclusion</h2>
 <p>Finding a reliable <strong>FMHY alternative</strong> isn't about finding a directory with 'more' links; it's about finding one that makes those links more accessible. While FMHY remains a masterpiece of community-driven archiving, OneList.pro offers the cleaner, faster, and more modern experience that 2026 demands. Whether you are browsing on your commute or looking for the next breakthrough in <a href="/aitools">AI productivity</a>, OneList is the easier way to discover the best of the web. Explore our curated categories today and see the difference for yourself.</p>
-        `,
+        \n\n<p><i>Written by the OneList Editorial Team — a group of digital privacy advocates and streaming enthusiasts dedicated to curating the web\'s best free entertainment and productivity resources. All links are manually reviewed before listing.</i></p>`,
         faqs: [
             {
                 question: 'What are the best FMHY alternatives?',
@@ -253,7 +253,7 @@ export const blogPosts: BlogPost[] = [
 
 <h2>Conclusion</h2>
 <p>The internet's library of free content is vast, but it requires the right tools and knowledge to navigate safely and effectively. In 2026, the best free streaming sites offer more quality and convenience than ever before. By following the advice in this guide and using a directory like OneList.pro, you can enjoy a premium entertainment experience from anywhere in the world—completely free of charge. Happy streaming!</p>
-        `,
+        \n\n<p><i>Written by the OneList Editorial Team — a group of digital privacy advocates and streaming enthusiasts dedicated to curating the web\'s best free entertainment and productivity resources. All links are manually reviewed before listing.</i></p>`,
         faqs: [
             {
                 question: 'What is the best free streaming site in 2026?',
@@ -294,50 +294,50 @@ export const blogPosts: BlogPost[] = [
         slug: 'best-free-movie-sites-2026',
         title: 'Best Free Movie Sites in 2026',
         excerpt: 'Discover the top free movie streaming sites that still work perfectly in 2026 without annoying pop-ups.',
-        content: '<p>Finding a reliable free streaming site can be tough...</p><h2>1. Fmovies</h2><p>Fmovies remains the king of free streaming...</p><h2>Is it safe?</h2><p>Always use a VPN when accessing these sites.</p>',
+        content: '<p>Finding a reliable free streaming site can be tough...</p><h2>1. Fmovies</h2><p>Fmovies remains the king of free streaming...</p><h2>Is it safe?</h2><p>Always use a VPN when accessing these sites.</p>\n\n<p><i>Written by the OneList Editorial Team — a group of digital privacy advocates and streaming enthusiasts dedicated to curating the web\'s best free entertainment and productivity resources. All links are manually reviewed before listing.</i></p>',
         coverImage: '/placeholder.png',
         date: '2026-03-01',
-        author: 'StreamAdmin'
+        author: 'OneList Editorial Team'
     },
     {
         id: '2',
         slug: 'top-10-anime-sites-without-ads',
         title: 'Top 10 Anime Sites Without Ads',
         excerpt: 'We reviewed the best ad-free anime sites for subbed and dubbed content.',
-        content: '<p>Tired of pop-ups interrupting your anime binges?</p>',
+        content: '<p>Tired of pop-ups interrupting your anime binges?</p>\n\n<p><i>Written by the OneList Editorial Team — a group of digital privacy advocates and streaming enthusiasts dedicated to curating the web\'s best free entertainment and productivity resources. All links are manually reviewed before listing.</i></p>',
         coverImage: '/placeholder.png',
         date: '2026-03-02',
-        author: 'WeebMaster'
+        author: 'OneList Editorial Team'
     },
     {
         id: '3',
         slug: 'is-using-vpn-legal',
         title: 'Is Using a VPN Legal?',
         excerpt: 'Everything you need to know about the legality of using VPNs for streaming.',
-        content: '<p>Yes, using a VPN is perfectly legal in most countries...</p>',
+        content: '<p>Yes, using a VPN is perfectly legal in most countries...</p>\n\n<p><i>Written by the OneList Editorial Team — a group of digital privacy advocates and streaming enthusiasts dedicated to curating the web\'s best free entertainment and productivity resources. All links are manually reviewed before listing.</i></p>',
         coverImage: '/placeholder.png',
         date: '2026-03-05',
-        author: 'TechGuru'
+        author: 'OneList Editorial Team'
     },
     {
         id: '4',
         slug: 'best-sites-watch-kdramas-free',
         title: 'Best Sites to Watch K-Dramas Free',
         excerpt: 'Get your fix of Korean dramas with these top-rated streaming directories.',
-        content: '<p>Korean dramas have taken the world by storm...</p>',
+        content: '<p>Korean dramas have taken the world by storm...</p>\n\n<p><i>Written by the OneList Editorial Team — a group of digital privacy advocates and streaming enthusiasts dedicated to curating the web\'s best free entertainment and productivity resources. All links are manually reviewed before listing.</i></p>',
         coverImage: '/placeholder.png',
         date: '2026-03-10',
-        author: 'DramaLover'
+        author: 'OneList Editorial Team'
     },
     {
         id: '5',
         slug: 'how-to-block-ads-on-streaming-sites',
         title: 'How to Block Ads on Streaming Sites',
         excerpt: 'A complete guide to using AdBlockers like uBlock Origin to enjoy a clean streaming experience.',
-        content: '<p>Ads can ruin your streaming experience. Here is how to stop them...</p>',
+        content: '<p>Ads can ruin your streaming experience. Here is how to stop them...</p>\n\n<p><i>Written by the OneList Editorial Team — a group of digital privacy advocates and streaming enthusiasts dedicated to curating the web\'s best free entertainment and productivity resources. All links are manually reviewed before listing.</i></p>',
         coverImage: '/placeholder.png',
         date: '2026-03-11',
-        author: 'StreamAdmin'
+        author: 'OneList Editorial Team'
     }
 ];
 

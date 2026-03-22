@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function SafetyNote() {
+export default function SafetyNote({ content }: { content?: string }) {
   return (
     <section className="mt-16 mb-8">
       <div className="bg-linear-to-br from-[#1a1a1a] to-[#111] border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
@@ -17,12 +17,18 @@ export default function SafetyNote() {
           </h2>
           
           <div className="prose prose-invert max-w-none text-gray-400 font-medium leading-relaxed">
-            <p className="mb-4">
-              When accessing third-party streaming platforms and link directories worldwide, your digital privacy should always be a top priority. Internet Service Providers (ISPs) in many regions actively monitor streaming activity, often resulting in bandwidth throttling or restricted access to international content libraries. To ensure a seamless and private experience, we strongly recommend two essential tools for users everywhere.
-            </p>
-            <p>
-              First, a <Link href="/vpn" className="text-primary hover:underline font-bold">Premium VPN</Link> is indispensable for bypassing geo-restrictions and encrypting your connection, making your activity invisible to local surveillance. Second, a robust <Link href="/adblockers" className="text-primary hover:underline font-bold">AdBlocker</Link> protects you from intrusive pop-ups and malicious scripts that are common on free streaming sites. No matter your location, these safeguards allow you to explore the global entertainment landscape with total peace of mind and zero interruptions.
-            </p>
+            {content ? (
+              <p>{content}</p>
+            ) : (
+              <>
+                <p className="mb-4">
+                  When accessing third-party streaming platforms and link directories worldwide, your digital privacy should always be a top priority. Internet Service Providers (ISPs) in many regions actively monitor streaming activity, often resulting in bandwidth throttling or restricted access to international content libraries. To ensure a seamless and private experience, we strongly recommend two essential tools for users everywhere.
+                </p>
+                <p>
+                  First, a <Link href="/vpn" className="text-primary hover:underline font-bold">Premium VPN</Link> is indispensable for bypassing geo-restrictions and encrypting your connection, making your activity invisible to local surveillance. Second, a robust <Link href="/adblockers" className="text-primary hover:underline font-bold">AdBlocker</Link> protects you from intrusive pop-ups and malicious scripts that are common on free streaming sites. No matter your location, these safeguards allow you to explore the global entertainment landscape with total peace of mind and zero interruptions.
+                </p>
+              </>
+            )}
           </div>
         </div>
       </div>

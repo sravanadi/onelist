@@ -119,9 +119,57 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                                                   bullets={categorySeo.bullets || []}
                                                 />
                                             )}
+                                            
+                                            {category.id === 'vpn' && (
+                                              <div className="my-10 overflow-x-auto">
+                                                <table className="w-full text-left border-collapse bg-card border border-border rounded-xl">
+                                                  <thead>
+                                                    <tr className="bg-white/5">
+                                                      <th className="border border-white/10 p-4 font-black text-primary">Feature</th>
+                                                      <th className="border border-white/10 p-4 font-black text-white">NordVPN</th>
+                                                      <th className="border border-white/10 p-4 font-black text-white">Surfshark</th>
+                                                      <th className="border border-white/10 p-4 font-black text-white">ExpressVPN</th>
+                                                    </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                    <tr>
+                                                      <td className="border border-white/10 p-4 font-bold text-gray-300">Speed</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">★★★★★</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">★★★★☆</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">★★★★★</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td className="border border-white/10 p-4 font-bold text-gray-300">Price/month</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">~$3.99</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">~$2.49</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">~$6.67</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td className="border border-white/10 p-4 font-bold text-gray-300">Simultaneous</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">6 devices</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">Unlimited</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">8 devices</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td className="border border-white/10 p-4 font-bold text-gray-300">No-logs policy</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">Yes</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">Yes</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">Yes</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td className="border border-white/10 p-4 font-bold text-gray-300">Best for</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">Speed</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">Budget</td>
+                                                      <td className="border border-white/10 p-4 font-medium text-white">Reliability</td>
+                                                    </tr>
+                                                  </tbody>
+                                                </table>
+                                              </div>
+                                            )}
+
                                             <LegalDisclaimer />
                                             <FilteredSiteList initialSites={sites} categorySlug={category.slug.replace('/', '')} />
-                                            <SafetyNote />
+                                            <SafetyNote content={(categorySeo as any)?.safetyNote} />
                                             {categorySeo && categorySeo.faqs && (
                                                 <FaqSection items={categorySeo.faqs} />
                                             )}
