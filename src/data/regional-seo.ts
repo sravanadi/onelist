@@ -28,7 +28,7 @@ export const REGIONAL_SEO_DATA: Record<string, RegionalSeo> = {
             },
             {
                 question: "What are the best free streaming sites working in the USA in 2026?",
-                answer: "Directories like OneList.pro constantly update their links to point to the most stable, currently working alternative domains for massive platforms that cater to American audiences."
+                answer: "Directories like <a href=\"/\" class=\"text-white font-bold hover:text-primary transition-colors\">OneList.pro</a> constantly update their links to point to the most stable, currently working alternative domains for massive platforms that cater to American audiences."
             }
         ]
     },

@@ -16,9 +16,11 @@ export default function CategoryIntro({ title, paragraphs, bullets }: CategoryIn
         
         <div className="space-y-6">
           {paragraphs.map((p, i) => (
-            <p key={i} className="text-lg text-gray-400 leading-relaxed font-medium">
-              {p}
-            </p>
+            <p 
+              key={i} 
+              className="text-lg text-gray-400 leading-relaxed font-medium"
+              dangerouslySetInnerHTML={{ __html: p }}
+            />
           ))}
         </div>
 

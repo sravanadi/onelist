@@ -53,9 +53,10 @@ export default function FaqSection({ items, title = "Frequently Asked Questions"
                         <div 
                             className={`transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-[500px] opacity-100 p-6 pt-0 border-t border-border/50' : 'max-h-0 opacity-0 px-6 overflow-hidden'}`}
                         >
-                            <p className="text-gray-400 leading-relaxed font-medium">
-                                {item.answer}
-                            </p>
+                            <p 
+                                className="text-gray-400 leading-relaxed font-medium"
+                                dangerouslySetInnerHTML={{ __html: item.answer }}
+                            />
                         </div>
                     </div>
                 ))}

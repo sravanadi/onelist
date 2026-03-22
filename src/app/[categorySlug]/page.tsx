@@ -107,7 +107,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                                 </Link>
                             </div>
                         )}
-                        {(category.id !== 'adult' || sites.length > 0) && (
+                        {(category.id !== 'adult' || sites.length > 0 || !!CATEGORY_SEO_DATA[category.id]) && (
                             <>
                                 {(() => {
                                     const categorySeo = CATEGORY_SEO_DATA[category.id]?.intro;

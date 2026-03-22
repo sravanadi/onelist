@@ -124,7 +124,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                             {post.faqs.map((faq, i) => (
                                 <div key={i} className="bg-card/50 border border-border p-6 rounded-2xl">
                                     <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
-                                    <p className="text-gray-400 leading-relaxed font-medium">{faq.answer}</p>
+                                    <p 
+                                        className="text-gray-400 leading-relaxed font-medium"
+                                        dangerouslySetInnerHTML={{ __html: faq.answer }}
+                                    />
                                 </div>
                             ))}
                         </div>

@@ -82,9 +82,10 @@ export default function Home() {
                 <div key={idx} className="relative group">
                   <div className="absolute -left-4 top-0 bottom-0 w-1 bg-primary/20 group-hover:bg-primary transition-colors rounded-full" />
                   <h3 className="text-xl font-bold text-white mb-4 pl-2">{section.heading}</h3>
-                  <p className="text-muted-foreground leading-relaxed font-medium">
-                    {section.content}
-                  </p>
+                  <p 
+                    className="text-muted-foreground leading-relaxed font-medium"
+                    dangerouslySetInnerHTML={{ __html: section.content }}
+                  />
                 </div>
               ))}
             </div>

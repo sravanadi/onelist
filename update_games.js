@@ -33,7 +33,8 @@ const newGameDomains = [
     "steamrip.com",
     "steamgg.net",
     "m4ckd0ge-repacks.site",
-    "gload.to"
+    "gload.to",
+    "games.yahoo.com"    
 ];
 
 let baseId = 7000;
@@ -49,6 +50,7 @@ for (const domain of newGameDomains) {
     else if (name.toLowerCase() === 'steamgg') name = 'SteamGG';
     else if (name.toLowerCase() === 'm4ckd0ge-repacks') name = 'M4ckD0ge Repacks';
     else if (name.toLowerCase() === 'gload') name = 'Gload';
+    else if (domain.toLowerCase() === 'games.yahoo.com') name = 'Yahoo Games';
     else name = name.charAt(0).toUpperCase() + name.slice(1);
 
     let url = "https://" + domain;

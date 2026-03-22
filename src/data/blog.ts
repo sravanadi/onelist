@@ -16,7 +16,7 @@ export const blogPosts: BlogPost[] = [
         id: 'yarrlist-alternatives',
         slug: 'best-yarrlist-alternatives-2026',
         title: 'Best Yarrlist Alternatives in 2026 — Top Streaming Directories',
-        excerpt: 'Searching for a reliable yarrlist alternative? We review the top 5 streaming directories in 2026, including OneList.pro and FMHY, to help you find the best free links globally.',
+        excerpt: 'Searching for a reliable yarrlist alternative? We review the top 5 streaming directories in 2026, including <a href="/" class="text-white font-bold hover:text-primary transition-colors">OneList.pro</a> and FMHY, to help you find the best free links globally.',
         readingTime: '12 min read',
         date: '2026-03-20',
         author: 'OneList Editorial Team',
@@ -77,15 +77,15 @@ export const blogPosts: BlogPost[] = [
         faqs: [
             {
                 question: 'What happened to Yarrlist?',
-                answer: 'In 2026, Yarrlist has faced challenges with update frequency and domain stability. This has led many users to seek more modern, regularly updated alternatives like OneList.pro that offer a cleaner UI and broader categories.'
+                answer: 'In 2026, Yarrlist has faced challenges with update frequency and domain stability. This has led many users to seek more modern, regularly updated alternatives like <a href="/" class="text-white font-bold hover:text-primary transition-colors">OneList.pro</a> that offer a cleaner UI and broader categories.'
             },
             {
                 question: 'Is there a better alternative to Yarrlist?',
-                answer: 'Yes, OneList.pro is currently widely considered the most complete Yarrlist alternative. It offers 16+ categories, including a unique AI tools section, a mobile-responsive design, and faster update cycles than traditional directories.'
+                answer: 'Yes, <a href="/" class="text-white font-bold hover:text-primary transition-colors">OneList.pro</a> is currently widely considered the most complete Yarrlist alternative. It offers 16+ categories, including a unique AI tools section, a mobile-responsive design, and faster update cycles than traditional directories.'
             },
             {
                 question: 'What is the most complete streaming directory in 2026?',
-                answer: 'OneList.pro is currently the most comprehensive directory, covering movies, anime, live sports, torrents, AI tools, and more in a single, well-organized platform built for a global audience.'
+                answer: '<a href="/" class="text-white font-bold hover:text-primary transition-colors">OneList.pro</a> is currently the most comprehensive directory, covering movies, anime, live sports, torrents, AI tools, and more in a single, well-organized platform built for a global audience.'
             },
             {
                 question: 'Are streaming directories safe to use?',
@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
             },
             {
                 question: 'How often are streaming directories updated?',
-                answer: 'Top-tier directories like OneList.pro are updated daily or weekly to ensure that dead links are removed and new, working mirrors are added. This constant maintenance is what separates high-quality directories from obsolete lists.'
+                answer: 'Top-tier directories like <a href="/" class="text-white font-bold hover:text-primary transition-colors">OneList.pro</a> are updated daily or weekly to ensure that dead links are removed and new, working mirrors are added. This constant maintenance is what separates high-quality directories from obsolete lists.'
             }
         ]
     },
@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
         id: 'fmhy-alternatives',
         slug: 'best-fmhy-alternatives-2026',
         title: 'Best FMHY Alternatives 2026 — Easier, Cleaner Streaming Directories',
-        excerpt: 'Looking for a more user-friendly FMHY alternative? We compare the best streaming wikis and directories in 2026, focusing on UI, mobile accessibility, and category depth.',
+        excerpt: 'Looking for a more user-friendly FMHY alternative? We compare the best streaming wikis and directories in 2026, focusing on UI, mobile accessibility, and category depth. Highlights include <a href="/" class="text-white font-bold hover:text-primary transition-colors">OneList.pro</a> and its modern approach.',
         readingTime: '9 min read',
         date: '2026-03-20',
         author: 'OneList Editorial Team',
