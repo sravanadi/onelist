@@ -3759,6 +3759,7 @@ export const featuredSites: Site[] = [
   { id: "nepu-to-doc", name: "Nepu", url: "https://nepu.to", logo: "/placeholder.png", description: "Simple audiobook portal.", categoryId: "ebooks", tags: ["Audiobooks"], badges: ["Free"], rating: 4.3, addedAt: "2026-03-20", language: "English" },
   { id: "foxit-com-doc", name: "Foxit PDF Reader", url: "https://foxit.com", logo: "/placeholder.png", description: "Fast and reliable ebook reader.", categoryId: "ebooks", tags: ["eBook Reader", "Software"], badges: ["Free"], rating: 4.6, addedAt: "2026-03-20", language: "English" },
   { id: "flowoss-com-doc", name: "Flow", url: "https://flowoss.com", logo: "/placeholder.png", description: "Minimalist open-source eBook reader.", categoryId: "ebooks", tags: ["eBook Reader", "Software"], badges: ["Free"], rating: 4.4, addedAt: "2026-03-20", language: "English" },
+  { id: "msn-games", name: "MSN Games", url: "https://zone.msn.com/en", logo: "/icons/games.png", description: "Play free online casual games, puzzles, and card games from Microsoft.", categoryId: "games", tags: ["Casual", "Browser"], badges: ["Free"], rating: 4.5, addedAt: "2026-03-22", language: "English" }
 ];
 
 // Helper to get sites by category
