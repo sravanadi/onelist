@@ -771,5 +771,54 @@ export const CATEGORY_SEO_DATA: Record<string, { intro: CategorySeo }> = {
       ],
       safetyNote: "Gambling involves financial risk. Never wager money essential for your living expenses. Use the responsible gaming tools provided by these platforms (like deposit limits) to keep your hobby safe and enjoyable."
     }
+  },
+  "open-source-tools": {
+    intro: {
+      title: "Best Open Source Tools 2026 — Comprehensive AI Software Directory",
+      paragraphs: [
+        "The open-source AI ecosystem is expanding rapidly, offering powerful alternatives to proprietary software. Our open source tools directory for 2026 is a globally-accessible resource for developers, researchers, and enthusiasts looking to leverage high-quality AI frameworks and applications for free. From infrastructure and deployment toolkits to generative models and coding assistants, we have curated over 100 of the most significant open-source projects available today.",
+        "Whether you are looking for Kubernetes-based model serving with KServe, high-performance ML lifecycles with MLflow, or creative generative art with Stable Diffusion, our directory helps you navigate the complex world of open-source software. We focus on tools that are actively maintained and offer robust community support, ensuring reliable performance across various infrastructure and research needs.",
+        "Our mission is to foster innovation by making these advanced technologies discoverable and accessible to everyone. By subcategorizing the best open-source AI tools into areas like Audio, Video, Reasoning, and Agents, we simplify your search for the right software to build your next project. Explore the frontier of open-source innovation and find the perfect tool through our globally curated list."
+      ],
+      bullets: [
+        "Curated directory of 100+ active open-source AI tools",
+        "Categorized by application: Infrastructure, Research, Media, and more",
+        "Free and accessible alternatives to proprietary AI software",
+        "Daily updates on new project releases and community tools"
+      ],
+      faqs: [
+        {
+          question: "What are the best open source tools for AI in 2026?",
+          answer: "The best tools depend on your needs. For deployment, KServe and BentoML are top choices. For research, JAX and Hugging Face Transformers lead the field. For creative work, Stable Diffusion and Whisper remain industry standards."
+        },
+        {
+          question: "Are these open source tools free to use?",
+          answer: "Yes, all tools listed in this category are open-source and free to use, though some may require your own infrastructure or hardware to run efficiently."
+        },
+        {
+          question: "Where can I find open source alternatives to ChatGPT?",
+          answer: "Projects like Open Assistant and various models hosted on Hugging Face provide robust open-source alternatives for conversational AI and large language model research."
+        }
+      ]
+    }
+  },
+  "jobs": {
+    intro: {
+      title: "Top Job Search Sites 2026 — Global & Niche Career Directory",
+      paragraphs: [
+        "Finding the right career opportunity starts with using the right platforms. Our directory of job search sites covers everything from massive global engines like LinkedIn and Indeed to specialized tech boards and remote work platforms.",
+        "Whether you are looking for localized roles in India, remote engineering positions at startups, or niche opportunities in healthcare and finance, this curated list helps you streamline your job hunt."
+      ],
+      faqs: [
+        {
+          question: "What are the best job sites for remote work?",
+          answer: "Platforms like Remote OK, We Work Remotely, and FlexJobs are the top choices for finding verified remote-first opportunities across various industries."
+        },
+        {
+          question: "Which Indian job portals offer the best results?",
+          answer: "Naukri, Internshala (for freshers), and Instahyre (for tech roles) are leading platforms with high ROI for job seekers in the Indian ecosystem."
+        }
+      ]
+    }
   }
 };

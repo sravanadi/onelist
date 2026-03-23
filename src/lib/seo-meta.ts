@@ -150,6 +150,14 @@ export const SEO_META = {
   india: {
     title: "Best Free Streaming Sites in India 2026 — Watch Bollywood, Cricket & More",
     description: "The best free streaming sites for Indian viewers in 2026. Curated links for Bollywood movies, live cricket, and international content with India-optimized mirrors."
+  },
+  "open-source-tools": {
+    title: "Best Open Source Tools 2026 — Free AI Software Directory | OneList",
+    description: "Discover the best open source tools in 2026. Comprehensive directory of 100+ open-source AI frameworks, models, and tools for developers and researchers."
+  },
+  "jobs": {
+    title: "Top Job Search Sites 2026 — Global Job Boards & Career Resources | OneList",
+    description: "Discover the best job search engines, remote work platforms, and tech hiring sites in 2026. Comprehensive directory of 80+ job boards and career resources."
   }
 } as const;
 

@@ -34,6 +34,8 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
     const isMusicCategory = categorySlug === 'music';
     const isEbooksCategory = categorySlug === 'ebooks';
     const isPornCategory = categorySlug === 'porn';
+    const isOpenSourceTools = categorySlug === 'open-source-tools';
+    const isJobsCategory = categorySlug === 'jobs';
 
     type GroupedSites = { [key: string]: Site[] };
     let groupedSites: GroupedSites = {};
@@ -75,6 +77,47 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
         const others = filteredSites.filter(s => !categorizedIds.has(s.id));
         if (others.length > 0) {
             groupedSites["Other Adult Sites"] = others;
+        }
+    } else if (isOpenSourceTools) {
+        groupedSites = {
+            "Infrastructure & Deployment": filteredSites.filter(s => s.tags.includes("Infrastructure-and-Deployment")),
+            "Research Tools": filteredSites.filter(s => s.tags.includes("Research-based")),
+            "Agents & Workflows": filteredSites.filter(s => s.tags.includes("Agents-and-Workflow")),
+            "AI Reasoning": filteredSites.filter(s => s.tags.includes("Reasoning")),
+            "Audio & Speech": filteredSites.filter(s => s.tags.includes("Audio-and-Speech")),
+            "Image Generation": filteredSites.filter(s => s.tags.includes("Image")),
+            "Canvas AI": filteredSites.filter(s => s.tags.includes("Canvas-based")),
+            "Learning & Frameworks": filteredSites.filter(s => s.tags.includes("Learning-based")),
+            "Video & Motion": filteredSites.filter(s => s.tags.includes("Video")),
+            "Music & Sound": filteredSites.filter(s => s.tags.includes("Music-based")),
+            "Vibecoding": filteredSites.filter(s => s.tags.includes("Vibecoding")),
+            "Coding Tools": filteredSites.filter(s => s.tags.includes("Coding"))
+        };
+
+        const categorizedIds = new Set(Object.values(groupedSites).flat().map(s => s.id));
+        const others = filteredSites.filter(s => !categorizedIds.has(s.id));
+        if (others.length > 0) {
+            groupedSites["Other Open Source Tools"] = others;
+        }
+    } else if (isJobsCategory) {
+        groupedSites = {
+            "Global Job Search Engines": filteredSites.filter(s => s.tags.includes("Global-Jobs")),
+            "Tech & IT Job Websites": filteredSites.filter(s => s.tags.includes("Tech-and-IT-Jobs")),
+            "Remote Job Websites": filteredSites.filter(s => s.tags.includes("Remote-Jobs")),
+            "Freshers & Internships": filteredSites.filter(s => s.tags.includes("Freshers-and-Internships")),
+            "India Job Portals": filteredSites.filter(s => s.tags.includes("India-Job-Portals")),
+            "Freelance & Gig Work": filteredSites.filter(s => s.tags.includes("Freelance-and-Gig-Work")),
+            "Startup Jobs": filteredSites.filter(s => s.tags.includes("Startup-Jobs")),
+            "Country Specific Jobs": filteredSites.filter(s => s.tags.includes("Country-Specific-Jobs")),
+            "AI Powered Job Platforms": filteredSites.filter(s => s.tags.includes("AI-Powered-Jobs")),
+            "Niche Job Boards": filteredSites.filter(s => s.tags.includes("Niche-Job-Boards")),
+            "Bonus & Underrated Sites": filteredSites.filter(s => s.tags.includes("Underrated-Jobs"))
+        };
+
+        const categorizedIds = new Set(Object.values(groupedSites).flat().map(s => s.id));
+        const others = filteredSites.filter(s => !categorizedIds.has(s.id));
+        if (others.length > 0) {
+            groupedSites["Other Job Resources"] = others;
         }
     }
 
@@ -134,11 +177,11 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
 
             {/* Main Content Area */}
             {filteredSites.length > 0 ? (
-                isMusicCategory || isEbooksCategory || isPornCategory ? (
+                isMusicCategory || isEbooksCategory || isPornCategory || isOpenSourceTools || isJobsCategory ? (
                     <div className="flex flex-col gap-12">
                         {Object.entries(groupedSites).map(([groupName, sites]) => (
                             sites.length > 0 && (
-                                <div key={groupName} className="flex flex-col gap-4">
+                                <div key={groupName} id={groupName.replace(/\s+/g, '-').toLowerCase()} className="flex flex-col gap-4 scroll-mt-24">
                                     <h2 className="text-2xl font-bold text-white flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-primary rounded-full"></span>
                                         {groupName}

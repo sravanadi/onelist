@@ -30,5 +30,7 @@ export const categories = [
     { id: 'ai-photo', name: 'AI Photo Editing', image: '/icons/ai-photo.png', slug: '/aitools/photo', description: 'AI-powered photo enhancement and editing', isHidden: true },
     { id: 'ai-automation', name: 'AI Automation & Agents', image: '/icons/ai-automation.png', slug: '/aitools/automation', description: 'Autonomous AI agents and automation flows', isHidden: true },
     { id: 'ai-data', name: 'AI Data & Analytics', image: '/icons/ai-data.png', slug: '/aitools/data', description: 'AI for data processing and analytics', isHidden: true },
-    { id: 'ai-edu', name: 'AI Education Tools', image: '/icons/ai-edu.png', slug: '/aitools/education', description: 'AI-powered learning and education resources', isHidden: true }
+    { id: 'ai-edu', name: 'AI Education Tools', image: '/icons/ai-edu.png', slug: '/aitools/education', description: 'AI-powered learning and education resources', isHidden: true },
+    { id: 'open-source-tools', name: 'Open Source Tools', image: '/icons/open-source.png', slug: '/open-source-tools', description: 'Comprehensive directory of 100+ open-source AI tools and framework' },
+    { id: 'jobs', name: 'Jobs', image: '/icons/jobs.png', slug: '/jobs', description: 'Global and niche job boards, remote work platforms, and career resources' }
 ];

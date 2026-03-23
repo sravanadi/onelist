@@ -5,12 +5,20 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { categories } from '@/data/categories';
 import { featuredSites, Site } from '@/data/sites';
+import { openSourceTools } from '@/data/open-source-tools';
+import { jobs } from '@/data/jobs';
 
 export default function SearchSection() {
     const [query, setQuery] = useState('');
-    const [results, setResults] = useState<{ type: 'category' | 'site', id: string, name: string, image?: string, slug?: string, url?: string, categoryName?: string }[]>([]);
+    const [results, setResults] = useState<{ type: 'category' | 'site' | 'sub-category', id: string, name: string, image?: string, slug?: string, url?: string, categoryName?: string }[]>([]);
     const [isFocused, setIsFocused] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
+
+    const openSourceSubCategories = [
+        "Infrastructure & Deployment", "Research Tools", "Agents & Workflows",
+        "AI Reasoning", "Audio & Speech", "Image Generation", "Canvas AI",
+        "Learning & Frameworks", "Video & Motion", "Music & Sound", "Vibecoding", "Coding Tools"
+    ];
 
     useEffect(() => {
         if (!query.trim()) {
@@ -31,20 +39,51 @@ export default function SearchSection() {
                 slug: c.slug
             }));
 
-        // Search sites (using featuredSites as the base or you could aggregate all if they were in one list, 
-        // but for now we'll search the primary site data available)
-        const matchedSites = featuredSites
+        const jobsSubCategories = [
+            "Global Job Search Engines", "Tech & IT Job Websites", "Remote Job Websites", 
+            "Freshers & Internships", "India Job Portals", "Freelance & Gig Work",
+            "Startup Jobs", "Country Specific Jobs", "AI Powered Job Platforms", 
+            "Niche Job Boards", "Bonus & Underrated Sites"
+        ];
+
+        // Search sub-categories
+        const matchedSubCategories = [
+            ...openSourceSubCategories
+                .filter(sc => sc.toLowerCase().includes(searchTerm))
+                .map(sc => ({
+                    type: 'sub-category' as const,
+                    id: `sc-${sc.replace(/\s+/g, '-').toLowerCase()}`,
+                    name: sc,
+                    slug: `/open-source-tools#${sc.replace(/\s+/g, '-').toLowerCase()}`,
+                    categoryName: 'Open Source Tools',
+                    image: '/icons/open-source.png'
+                })),
+            ...jobsSubCategories
+                .filter(sc => sc.toLowerCase().includes(searchTerm))
+                .map(sc => ({
+                    type: 'sub-category' as const,
+                    id: `sc-jobs-${sc.replace(/\s+/g, '-').toLowerCase()}`,
+                    name: sc,
+                    slug: `/jobs#${sc.replace(/\s+/g, '-').toLowerCase()}`,
+                    categoryName: 'Jobs',
+                    image: '/icons/jobs.png'
+                }))
+        ];
+
+        // Search sites (featuredSites + openSourceTools + jobs)
+        const allSearchableSites = [...featuredSites, ...openSourceTools, ...jobs];
+        const matchedSites = allSearchableSites
             .filter(s => s.name.toLowerCase().includes(searchTerm) || s.description.toLowerCase().includes(searchTerm) || s.tags.some(t => t.toLowerCase().includes(searchTerm)))
-            .slice(0, 10) // Limit results
+            .slice(0, 15) // Increased limit
             .map(s => ({
                 type: 'site' as const,
                 id: s.id,
                 name: s.name,
                 url: s.url,
-                categoryName: categories.find(c => c.id === s.categoryId)?.name
+                categoryName: categories.find(c => c.id === s.categoryId)?.name || 'Tools'
             }));
 
-        setResults([...matchedCategories, ...matchedSites].slice(0, 15));
+        setResults([...matchedCategories, ...matchedSubCategories, ...matchedSites].slice(0, 20));
     }, [query]);
 
     // Handle clicks outside to close dropdown
@@ -85,14 +124,14 @@ export default function SearchSection() {
                             {results.map((result) => (
                                 <Link
                                     key={`${result.type}-${result.id}`}
-                                    href={result.type === 'category' ? result.slug! : result.url!}
+                                    href={(result.type === 'category' || result.type === 'sub-category') ? result.slug! : result.url!}
                                     target={result.type === 'site' ? '_blank' : '_self'}
                                     className="flex items-center gap-4 px-6 py-3 hover:bg-white/5 transition-colors border-b border-white/5 last:border-0"
                                     onClick={() => setIsFocused(false)}
                                 >
                                     <div className="w-10 h-10 bg-card rounded-lg flex items-center justify-center shrink-0 border border-border">
-                                        {result.type === 'category' ? (
-                                            <Image src={result.image!} alt={result.name} width={24} height={24} />
+                                        {(result.type === 'category' || result.type === 'sub-category') ? (
+                                            <Image src={result.image || '/icons/ai.png'} alt={result.name} width={24} height={24} />
                                         ) : (
                                             <span className="text-primary text-xl font-bold">▶</span>
                                         )}
@@ -100,11 +139,11 @@ export default function SearchSection() {
                                     <div className="flex flex-col">
                                         <span className="text-white font-bold">{result.name}</span>
                                         <span className="text-xs text-muted-foreground uppercase tracking-wider">
-                                            {result.type === 'category' ? 'Category' : `Site in ${result.categoryName}`}
+                                            {result.type === 'category' ? 'Category' : result.type === 'sub-category' ? `Sub-category in ${result.categoryName}` : `Site in ${result.categoryName}`}
                                         </span>
                                     </div>
                                     <span className="ml-auto text-gray-600">
-                                        {result.type === 'category' ? 'Browse' : 'Open'} ↗
+                                        {(result.type === 'category' || result.type === 'sub-category') ? 'Browse' : 'Open'} ↗
                                     </span>
                                 </Link>
                             ))}

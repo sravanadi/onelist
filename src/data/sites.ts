@@ -1,3 +1,5 @@
+import { openSourceTools } from './open-source-tools';
+import { jobs } from './jobs';
 export type Site = {
   id: string;
   name: string;
@@ -13965,5 +13967,11 @@ export const featuredSites: Site[] = [
 
 // Helper to get sites by category
 export const getSitesByCategory = (categoryId: string) => {
+  if (categoryId === 'open-source-tools') {
+    return openSourceTools;
+  }
+  if (categoryId === 'jobs') {
+    return jobs;
+  }
   return featuredSites.filter(site => site.categoryId === categoryId);
 };
