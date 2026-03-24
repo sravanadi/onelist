@@ -112,6 +112,9 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{
           __html: `(function(s){s.dataset.zone='10775569',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
         }} />
+        <script dangerouslySetInnerHTML={{
+          __html: `(function(s){s.dataset.zone='10775611',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
+        }} />
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <JsonLd data={websiteSchema} />
