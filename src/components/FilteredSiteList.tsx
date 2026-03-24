@@ -36,11 +36,33 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
     const isPornCategory = categorySlug === 'porn';
     const isOpenSourceTools = categorySlug === 'open-source-tools';
     const isJobsCategory = categorySlug === 'jobs';
+    const isEducationalTools = categorySlug === 'educational-tools';
+    const isDeveloperTools = categorySlug === 'developer-tools';
 
     type GroupedSites = { [key: string]: Site[] };
     let groupedSites: GroupedSites = {};
 
     if (isMusicCategory) {
+        // ... existing music grouping ...
+    } else if (isEducationalTools) {
+        groupedSites = {
+            "Documentaries": filteredSites.filter(s => s.tags.includes("Documentaries")),
+            "Courses & Lectures": filteredSites.filter(s => s.tags.includes("Courses-Streaming") || s.tags.includes("Courses-Downloading") || s.tags.includes("Lectures")),
+            "Learning Resources": filteredSites.filter(s => s.tags.includes("Learning-Sites") || s.tags.includes("Digital-Archives")),
+            "Science & Math": filteredSites.filter(s => s.tags.includes("Science-Physics") || s.tags.includes("Science-Biology") || s.tags.includes("Science-Chemistry") || s.tags.includes("Math")),
+            "Engineering & Space": filteredSites.filter(s => s.tags.includes("Engineering") || s.tags.includes("Space") || s.tags.includes("Space-Astronomy")),
+            "Humanities & History": filteredSites.filter(s => s.tags.includes("History") || s.tags.includes("Humanities-Geography") || s.tags.includes("Humanities-Philosophy")),
+            "Skills & Hobbies": filteredSites.filter(s => s.tags.includes("Skills-Music") || s.tags.includes("Chess") || s.tags.includes("Art")),
+            "Language Learning": filteredSites.filter(s => s.tags.includes("Language-Learning") || s.tags.includes("Japanese") || s.tags.includes("Korean")),
+            "Developer Learning": filteredSites.filter(s => s.tags.includes("Dev-Learning") || s.tags.includes("Web-Dev") || s.tags.includes("Comp-Sci"))
+        };
+
+        const categorizedIds = new Set(Object.values(groupedSites).flat().map(s => s.id));
+        const others = filteredSites.filter(s => !categorizedIds.has(s.id));
+        if (others.length > 0) {
+            groupedSites["Other Educational Tools"] = others;
+        }
+    } else if (isJobsCategory) {
         groupedSites = {
             "Spotify Downloaders": filteredSites.filter(s => s.tags.includes("Spotify Downloader") || s.tags.includes("Spotify")),
             "YouTube Downloaders": filteredSites.filter(s => s.tags.includes("YouTube to MP3") || s.tags.includes("YouTube")),
@@ -119,6 +141,31 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
         if (others.length > 0) {
             groupedSites["Other Job Resources"] = others;
         }
+    } else if (isDeveloperTools) {
+        groupedSites = {
+            "Dev Communities": filteredSites.filter(s => s.tags.includes("dev-community")),
+            "Dev News": filteredSites.filter(s => s.tags.includes("dev-news")),
+            "Developer Multi-Tools": filteredSites.filter(s => s.tags.includes("dev-tools-multi")),
+            "Online Toolkits": filteredSites.filter(s => s.tags.includes("online-toolkits")),
+            "Software Dev Tools": filteredSites.filter(s => s.tags.includes("software-dev")),
+            "Mobile Dev Tools": filteredSites.filter(s => s.tags.includes("mobile-dev")),
+            "Database Tools": filteredSites.filter(s => s.tags.includes("database-tools")),
+            "Git & GitHub": filteredSites.filter(s => s.tags.includes("git-tools") || s.tags.includes("github-tools")),
+            "Docker & Containers": filteredSites.filter(s => s.tags.includes("docker-tools")),
+            "CLI & API Tools": filteredSites.filter(s => s.tags.includes("cli-tools") || s.tags.includes("api-tools")),
+            "Game Development": filteredSites.filter(s => s.tags.includes("game-dev") || s.tags.includes("game-assets") || s.tags.includes("map-creators")),
+            "IDEs & Code Editors": filteredSites.filter(s => s.tags.includes("ide-code-editors") || s.tags.includes("cloud-ide-collab") || s.tags.includes("android-code-editors") || s.tags.includes("vim-neovim") || s.tags.includes("vscode-tools")),
+            "AI Coding Agents": filteredSites.filter(s => s.tags.includes("ai-coding-agents") || s.tags.includes("web-app-builders-ai")),
+            "Programming Languages": filteredSites.filter(s => s.tags.includes("programming-langs") || s.tags.includes("python-tools")),
+            "Web Development": filteredSites.filter(s => s.tags.includes("web-dev-html") || s.tags.includes("web-dev-css") || s.tags.includes("web-dev-js") || s.tags.includes("web-dev-tools-misc") || s.tags.includes("website-builders")),
+            "Cybersecurity & Reverse Engineering": filteredSites.filter(s => s.tags.includes("cybersecurity-tools") || s.tags.includes("pen-testing") || s.tags.includes("reverse-engineering"))
+        };
+
+        const categorizedIds = new Set(Object.values(groupedSites).flat().map(s => s.id));
+        const others = filteredSites.filter(s => !categorizedIds.has(s.id));
+        if (others.length > 0) {
+            groupedSites["Other Developer Tools"] = others;
+        }
     }
 
     return (
@@ -177,7 +224,7 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
 
             {/* Main Content Area */}
             {filteredSites.length > 0 ? (
-                isMusicCategory || isEbooksCategory || isPornCategory || isOpenSourceTools || isJobsCategory ? (
+                isMusicCategory || isEbooksCategory || isPornCategory || isOpenSourceTools || isJobsCategory || isEducationalTools || isDeveloperTools ? (
                     <div className="flex flex-col gap-12">
                         {Object.entries(groupedSites).map(([groupName, sites]) => (
                             sites.length > 0 && (

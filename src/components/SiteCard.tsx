@@ -3,6 +3,10 @@ import { Site } from '@/data/sites';
 export default function SiteCard({ site }: { site: Site }) {
     // Extract domain for display if possible, otherwise use name
     const displayUrl = site.displayUrl || site.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
+    
+    // Check if it's a GitHub link
+    const isGitHub = site.url.includes('github.com') || site.url.includes('github.io');
+    const logoSrc = isGitHub ? '/github-logo.png' : (site.logo && site.logo !== '/placeholder.png' ? site.logo : null);
 
     return (
         <a
@@ -12,9 +16,17 @@ export default function SiteCard({ site }: { site: Site }) {
             className="flex flex-col gap-2 w-full bg-[#1c212d] hover:bg-[#252b3a] border border-[#2d3548] py-4 px-6 rounded-xl text-white transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-sm text-center md:text-left"
         >
             <div className="flex items-center justify-center md:justify-start gap-3">
-                <span className="text-white/80 group-hover:text-primary transition-colors text-lg shrink-0">
-                    ▶
-                </span>
+                {logoSrc ? (
+                    <img 
+                        src={logoSrc} 
+                        alt="" 
+                        className="w-5 h-5 object-contain filter group-hover:brightness-110 transition-all"
+                    />
+                ) : (
+                    <span className="text-white/80 group-hover:text-primary transition-colors text-lg shrink-0">
+                        ▶
+                    </span>
+                )}
                 <span className="text-xl font-medium tracking-tight truncate">
                     {displayUrl}
                 </span>

@@ -1,5 +1,7 @@
 import { openSourceTools } from './open-source-tools';
 import { jobs } from './jobs';
+import { educationalTools } from './educational-tools';
+import { developerTools } from './developer-tools';
 export type Site = {
   id: string;
   name: string;
@@ -13972,6 +13974,12 @@ export const getSitesByCategory = (categoryId: string) => {
   }
   if (categoryId === 'jobs') {
     return jobs;
+  }
+  if (categoryId === 'educational-tools') {
+    return educationalTools;
+  }
+  if (categoryId === 'developer-tools') {
+    return developerTools;
   }
   return featuredSites.filter(site => site.categoryId === categoryId);
 };

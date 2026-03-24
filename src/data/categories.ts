@@ -32,5 +32,7 @@ export const categories = [
     { id: 'ai-data', name: 'AI Data & Analytics', image: '/icons/ai-data.png', slug: '/aitools/data', description: 'AI for data processing and analytics', isHidden: true },
     { id: 'ai-edu', name: 'AI Education Tools', image: '/icons/ai-edu.png', slug: '/aitools/education', description: 'AI-powered learning and education resources', isHidden: true },
     { id: 'open-source-tools', name: 'Open Source Tools', image: '/icons/open-source.png', slug: '/open-source-tools', description: 'Comprehensive directory of 100+ open-source AI tools and framework' },
-    { id: 'jobs', name: 'Jobs', image: '/icons/jobs.png', slug: '/jobs', description: 'Global and niche job boards, remote work platforms, and career resources' }
+    { id: 'jobs', name: 'Jobs', image: '/icons/jobs.png', slug: '/jobs', description: 'Global and niche job boards, remote work platforms, and career resources' },
+    { id: 'educational-tools', name: 'Educational Tools', image: '/icons/educational-tools.png', slug: '/educational-tools', description: 'Access a wealth of knowledge with free courses, documentaries, and interactive learning resources.' },
+    { id: 'developer-tools', name: 'Developer Tools', image: '/icons/developer-tools.png', slug: '/developer-tools', description: 'Curated directory of free developer tools, communities, news, and resources for software engineering.' }
 ];

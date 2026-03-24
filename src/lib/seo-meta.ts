@@ -51,6 +51,14 @@ export const SEO_META = {
     title: "Adult (18+) Streaming Sites Directory 2026 | OneList",
     description: "Curated directory of adult streaming platforms for 18+ users. All sites verified. Must be 18 or older to access this category."
   },
+  gambling: {
+    title: "Best Crypto Casinos & Gambling Sites 2026 — OneList",
+    description: "Curated directory of the best crypto casinos, CS2 gambling sites, and betting platforms. Safe and verified in 2026."
+  },
+  porn: {
+    title: "Best Free Porn Sites 2026 — Safe & Organized | OneList",
+    description: "The ultimate directory of free porn sites in 2026. High-quality video, organized by category, and strictly for 18+ audiences."
+  },
   vpn: {
     title: "Best VPNs for Streaming 2026 — Free & Paid | OneList",
     description: "Best VPNs for safe streaming in 2026. Protect your privacy while browsing movie, anime, and torrent sites — curated recommendations."
@@ -135,7 +143,7 @@ export const SEO_META = {
     title: "Best AI Data & Analytics Tools 2026 — OneList",
     description: "Process and analyze data with the power of AI. Best tools for data science and business intelligence."
   },
-  "ai-education": {
+  "ai-edu": {
     title: "Best AI Education & Learning Tools 2026 — OneList",
     description: "AI-powered learning resources and tools for students, teachers, and lifelong learners."
   },
@@ -158,6 +166,14 @@ export const SEO_META = {
   "jobs": {
     title: "Top Job Search Sites 2026 — Global Job Boards & Career Resources | OneList",
     description: "Discover the best job search engines, remote work platforms, and tech hiring sites in 2026. Comprehensive directory of 80+ job boards and career resources."
+  },
+  "educational-tools": {
+    title: "Best Free Educational Tools & Learning Sites 2026 | OneList",
+    description: "Discover the best free educational tools in 2026. Comprehensive directory of 150+ learning platforms, documentaries, and interactive resources for all subjects."
+  },
+  "developer-tools": {
+    title: "Best Free Developer Tools & Resources 2026 | OneList",
+    description: "Discover the best free developer tools in 2026. Comprehensive directory of 250+ developer communities, news, IDEs, and coding agents."
   }
 } as const;
 
