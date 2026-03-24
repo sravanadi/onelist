@@ -107,6 +107,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://3nbf4.com/88/p.js" async defer></script>
+      </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
         <JsonLd data={websiteSchema} />
         <JsonLd data={organizationSchema} />
