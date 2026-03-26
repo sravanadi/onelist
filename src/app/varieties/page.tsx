@@ -4,6 +4,9 @@ import { SEO_META } from "@/lib/seo-meta";
 import { getCanonicalUrl, getBreadcrumbSchema } from "@/lib/seo-utils";
 import JsonLd from "@/components/JsonLd";
 import { varietiesData } from "@/data/varieties";
+import { CATEGORY_SEO_DATA } from "@/data/category-seo";
+import CategoryIntro from "@/components/CategoryIntro";
+import SafetyNote from "@/components/SafetyNote";
 
 export const metadata: Metadata = {
   title: SEO_META.varieties.title,
@@ -44,6 +47,14 @@ export default function VarietiesPage() {
             Curated Directory of the World's Most Useful, Fun, and Interesting Websites.
           </p>
         </div>
+        
+        {/* SEO Category Intro */}
+        {CATEGORY_SEO_DATA.varieties && (
+          <CategoryIntro 
+            {...CATEGORY_SEO_DATA.varieties.intro} 
+            bullets={CATEGORY_SEO_DATA.varieties.intro.bullets || []} 
+          />
+        )}
 
         {/* Search / Filter placeholder - can be added later if needed */}
         
@@ -96,6 +107,11 @@ export default function VarietiesPage() {
             </section>
           ))}
         </div>
+
+        {/* SEO Safety Note */}
+        {CATEGORY_SEO_DATA.varieties && (
+          <SafetyNote />
+        )}
 
         {/* Footer Note */}
         <div className="mt-20 p-10 rounded-2xl bg-linear-to-b from-[#141414] to-background border border-white/5 text-center">

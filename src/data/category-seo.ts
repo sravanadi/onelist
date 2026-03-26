@@ -843,5 +843,37 @@ export const CATEGORY_SEO_DATA: Record<string, { intro: CategorySeo }> = {
         }
       ]
     }
+  },
+  varieties: {
+    intro: {
+      title: "Best Variety Sites & Free Resources 2026 — Curated Digital Tools",
+      paragraphs: [
+        "In the vast landscape of the digital world, finding specialized and unique platforms can be a challenge. Our Varieties page serves as a comprehensive hub for <a href=\"/\" class=\"text-white font-bold hover:text-primary transition-colors\">free sources</a> that simplify your online experience. Whether you're a power user looking for automation tools or someone seeking a bit of internet nostalgia, this curated directory connects you with the best the web has to offer. We meticulously verify each entry to ensure you have access to reliable, high-quality resources that enhance your productivity, security, and entertainment. From massive web indexes to obscure but brilliant utility sites, OneList is your gateway to a more efficient and enjoyable internet journey.",
+        "Starting your search with the right index is key to discovering hidden gems. Our collection includes massive 'Awesome' lists and specialized GitHub topics that serve as the backbone of open-source discovery. These general-purpose platforms are essential for anyone looking to find similar websites or ethical software alternatives, providing a birds-eye view of the internet's most valuable resources and community-driven projects. Digital safety is no longer optional; it's a necessity. We've curated the industries most respected privacy guides and security scanners to help you stay protected. From checking if your data has been leaked in a breach to analyzing suspicious files before you open them, these tools are your first line of defense. Protecting your digital footprint starts with using the right privacy-first services and maintaining a zero-trust mindset.",
+        "The internet is the world's largest library, and we've organized the best gateways to free education. Access millions of eBooks, professional-grade coding courses, and computational intelligence engines that can solve complex problems in seconds. Whether you're a lifelong learner or a student looking for textbooks, these diverse educational resources empower you to master new skills and explore the depths of human knowledge without financial barriers. Efficiency is about having the right tool at the right time. Our productivity section features indispensable utilities like disposable email services, P2P file sharing platforms, and advanced URL managers. These tools solve daily digital friction points—from bypassing sign-up hurdles to sharing massive files securely. Streamline your workflow and reclaim your time by utilizing these specialized web apps designed for the modern digital worker.",
+        "Take a trip down memory lane or find a moment of levity with our curated list of nostalgic and entertaining sites. Explore the web as it looked in the 90s, visit the original Space Jam website, or listen to live radio from any city on the planet. These sites remind us that the internet is not just for work; it's a vast playground of creativity, history, and delightful uselessness that connects us all. Stay informed with visual news aggregators and design your next project with pro-grade online editors. For the power users, we've included essential automation flows, system utilities, and scraping tools that bridge the gap between different web services. Whether you're an artist, a journalist, or a developer, these specialized resources provide the advanced functionality needed to excel in your field and automate the mundane."
+      ],
+      bullets: [
+        "Curated directory of the world's most useful and fun websites",
+        "Top-rated privacy, security, and anonymity tools",
+        "Indispensable productivity utilities and file sharing services",
+        "Deep dives into internet history, nostalgia, and fun sites"
+      ],
+      faqs: [
+        {
+          question: "What are 'Variety' sites on OneList?",
+          answer: "Variety sites are high-quality, specialized platforms that don't fit into standard categories like movies or anime. This includes everything from digital privacy tools and educational resources to internet history archives and fun interactive websites."
+        },
+        {
+          question: "How do you verify the links on the Varieties page?",
+          answer: "Our team manually checks every URL for safety, uptime, and utility. We prioritize tools that are free to use, respect user privacy, and provide significant value to our global audience."
+        },
+        {
+          question: "Are these variety sites free to access?",
+          answer: "Yes, the vast majority of the sites we list are completely free or offer significant free-to-use tiers. Our mission is to connect users with the best free resources available on the web today."
+        }
+      ],
+      safetyNote: "While we curate these sites for quality, always use a VPN and adblocker when exploring new web domains. Some utility sites may contain third-party trackers or ads that can be mitigated with a robust security setup."
+    }
   }
 };
