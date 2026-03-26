@@ -174,6 +174,10 @@ export const SEO_META = {
   "developer-tools": {
     title: "Best Free Developer Tools & Resources 2026 | OneList",
     description: "Discover the best free developer tools in 2026. Comprehensive directory of 250+ developer communities, news, IDEs, and coding agents."
+  },
+  varieties: {
+    title: "Best Useful & Fun Sites 2026 — Variety Directory | OneList",
+    description: "Explore a curated directory of the most useful, fun, and interesting sites on the internet. From privacy tools to internet history — all in OneList."
   }
 } as const;
 
