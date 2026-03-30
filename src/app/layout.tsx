@@ -35,15 +35,15 @@ const organizationSchema = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://onelist.pro"),
   title: {
-    default: "onelist.pro - The Ultimate AI & Streaming Directory",
-    template: "%s | onelist.pro",
+    default: "OneList — Free Streaming Sites, Anime, Torrents & AI Tools Directory 2026",
+    template: "%s | OneList.pro",
   },
-  description: "A curated directory for the best AI tools, movies, anime, sports, and TV shows streaming sites. Find everything in one list.",
+  description: "OneList.pro — the world's most complete free streaming directory. Find free movies, anime, live sports, AI tools, ebooks, music, manga, KDrama, torrents and more. 20+ categories. No signup. Updated daily. Free worldwide.",
   icons: {
     icon: "/icon.png",
     apple: "/icon.png",
   },
-  keywords: ["AI Tools", "Streaming Directory", "Free Movies", "Anime List", "Live Sports"],
+  keywords: ["Free Streaming Sites 2026", "Best Free Movie Sites", "Watch Anime Free", "AI Tools Directory", "Live Sports Streaming", "Torrent Sites List"],
   authors: [{ name: "OneList Team" }],
   creator: "OneList Team",
   publisher: "OneList Team",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
       default: "OneList — Free Streaming Sites, Anime, Torrents & AI Tools Directory 2026",
       template: "%s | OneList",
     },
-    description: "The ultimate curated directory of free streaming sites, anime, torrents, AI tools, VPNs and more.",
+    description: "OneList.pro — the world's most complete free streaming directory. Find free movies, anime, live sports, AI tools, ebooks, music, manga, KDrama, torrents and more. 20+ categories. No signup. Updated daily. Free worldwide.",
     url: "https://onelist.pro",
     siteName: "OneList",
     images: [
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
       default: "OneList — Free Streaming Sites, Anime, Torrents & AI Tools Directory 2026",
       template: "%s | OneList",
     },
-    description: "The ultimate curated directory of free streaming sites, anime, torrents, AI tools, VPNs and more.",
+    description: "OneList.pro — the world's most complete free streaming directory. Find free movies, anime, live sports, AI tools, ebooks, music, manga, KDrama, torrents and more. 20+ categories. No signup. Updated daily. Free worldwide.",
     images: ["/og-default.png"],
     site: "@onelistpro",
   },

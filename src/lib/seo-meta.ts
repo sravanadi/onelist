@@ -1,7 +1,7 @@
 export const SEO_META = {
   home: {
     title: "OneList — Free Streaming Sites, Anime, Torrents & AI Tools Directory 2026",
-    description: "The ultimate curated directory of free streaming sites, anime, torrent sites, AI tools, VPNs, and more. Safe, updated, and organised in 16+ categories."
+    description: "OneList.pro — the world's most complete free streaming directory. Find free movies, anime, live sports, AI tools, ebooks, music, manga, KDrama, torrents and more. 20+ categories. No signup. Updated daily. Free worldwide."
   },
   movies: {
     title: "Best Free Movie & TV Streaming Sites 2026 — OneList",

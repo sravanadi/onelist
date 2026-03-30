@@ -385,27 +385,51 @@ export const CATEGORY_SEO_DATA: Record<string, { intro: CategorySeo }> = {
       faqs: [
         {
           question: "What is OneList.pro?",
-          answer: "<a href=\"/\" class=\"text-white font-bold hover:text-primary transition-colors\">OneList.pro</a> is a professional, curated directory of the best free streaming, AI, and utility sites available on the internet in 2026. Designed for a global audience, we simplify the process of finding working mirrors for movies, anime, live sports, and software tools. Our mission is to provide a clean, secure, and user-friendly alternative to cluttered community lists, making high-quality digital discovery accessible to everyone worldwide."
+          answer: "OneList.pro is a free, globally curated directory of the best streaming, downloading, and tool sites on the internet. We cover 20+ categories including movies, anime, live sports, music, ebooks, AI tools, torrents, and more — all in one organised, mobile-friendly place. No signup required, no paywalls, free for everyone worldwide."
         },
         {
-          question: "How is OneList different from FMHY?",
-          answer: "While FMHY (FreeMediaHeckYeah) is an incredible community-driven resource, OneList is designed with a 'UI-first' philosophy. We focus on a premium, minimalist interface that is easier for beginners to navigate compared to massive text-based wikis. As a focused FMHY alternative, we curate only the highest-quality, most stable links and provide detailed metadata, safety notes, and visual categorization to enhance your browsing experience."
+          question: "How is OneList different from FMHY or Yarrlist?",
+          answer: "FMHY (freemediaheckyeah.net) is a massive wiki that can be overwhelming for everyday users. Yarrlist is a flat link list with limited categories. OneList offers a clean card-based interface that works on any device, covers 20+ categories including AI tools (which competitors skip), and is designed for beginners and casual users — not just power users."
         },
         {
-          question: "Are the sites on OneList safe?",
-          answer: "Every site listed in our directory undergoes a verification process for content reliability and server stability. However, because these are third-party platforms, we advocate for a zero-trust browsing model. OneList is a safety-first directory, meaning we prioritize links with fewer intrusive trackers and always remind our global users to employ professional-grade security tools like VPNs and adblockers before entering any external streaming portal."
+          question: "Can I find free movies on OneList without signing up?",
+          answer: "Yes. Every site in our Movies directory is specifically chosen because it lets you watch without creating an account. You can go from opening OneList.pro to watching a movie in under 60 seconds — no email, no credit card, no registration."
         },
         {
-          question: "Do I need a VPN to use OneList?",
-          answer: "While you can browse <a href=\"/\" class=\"text-white font-bold hover:text-primary transition-colors\">OneList.pro</a> itself without any special tools, we strongly recommend using a premium VPN when accessing external streaming or torrenting links from our directory. ISPs in many countries often throttle or block these mirrors. A VPN not only helps you bypass these regional restrictions but also encrypts your traffic and masks your IP address, ensuring your streaming habits remain private and secure from third-party monitoring."
+          question: "Does OneList have free live sports streaming?",
+          answer: "Yes. Our Live Sports category covers football (soccer), cricket, IPL, NBA, NFL, F1, tennis, hockey, and more. We list stream aggregators, sport-specific mirrors, and backup links so that if one stream goes down, another is always available."
+        },
+        {
+          question: "Where can I watch anime for free in 2026?",
+          answer: "Our Anime directory lists 30+ verified streaming sites covering subbed anime, dubbed anime, and Donghua (Chinese animation). Sites like HiAnime, AnimeKai, Miruro, and more are verified and updated regularly. No account or subscription needed to start watching."
+        },
+        {
+          question: "Are the sites on OneList safe to use?",
+          answer: "All sites are manually reviewed before listing. We check for malware, excessive redirects, and phishing links. However, since these are third-party platforms, we always recommend using a VPN and an adblocker like uBlock Origin when visiting any external streaming site. Our VPN and AdBlocker directories have everything you need."
+        },
+        {
+          question: "Does OneList work in my country?",
+          answer: "Yes. OneList.pro itself is accessible from every country with no geo-restrictions. The streaming sites in our directory are chosen for global availability. If a site is blocked in your region by your ISP, our VPN directory can help you access it instantly."
         },
         {
           question: "How often is OneList updated?",
-          answer: "Our team monitors the global streaming landscape daily. Links in the digital world can be dynamic, with domains often changing or mirrors going offline due to network shifts. We regularly test and update our database to ensure our 'best streaming sites 2026' lists remain current and reliable. If a major platform moves to a new domain, we aim to have the verified mirror updated in our directory within 24 hours."
+          answer: "Our team monitors all listed sites daily. Dead links are removed within 24 hours. New working mirrors and sites are added as they are verified. We also publish monthly update blog posts covering major changes to the streaming landscape."
         },
         {
-          question: "Is OneList free to use?",
-          answer: "Yes, <a href=\"/\" class=\"text-white font-bold hover:text-primary transition-colors\">OneList.pro</a> is 100% free to access for all users worldwide. We do not require registration or any form of subscription to browse our 16+ categories of curated links. Our goal is to provide a free, high-quality public service that helps the global internet community discover better entertainment and productivity tools without the friction of paywalls or intrusive data collection."
+          question: "What AI tools can I find on OneList?",
+          answer: "Our AI Tools directory has 13 sub-categories covering AI chat tools, AI image generators, AI video tools, AI coding assistants, AI writing tools, AI audio and music tools, AI avatar tools, AI search engines, AI productivity apps, AI photo editors, AI automation agents, AI data tools, and AI education tools — all free or freemium."
+        },
+        {
+          question: "Can I watch KDrama and Asian drama for free on OneList?",
+          answer: "Yes. Our Asian Drama category covers Korean drama (KDrama), Chinese drama (CDrama), and Japanese drama (JDrama) sites with English subtitles. Sites like GoPlay, Dramacool, KissKH, and Asiaflix are all verified and listed."
+        },
+        {
+          question: "Does OneList have free ebooks and manga?",
+          answer: "Yes. Our eBooks directory lists sites to download free PDF books, EPUB novels, and textbooks. Our Manga directory covers the best free manga, manhwa, and manhua reading sites including MangaDex, MangaFire, and 10 others — no account needed to read."
+        },
+        {
+          question: "Is OneList.pro completely free to use?",
+          answer: "100% free, forever. We do not charge for access, do not require registration, and do not sell your data. OneList is a public service for the global internet community. Our only ask is that you bookmark us and share with friends who are tired of paying too much for entertainment."
         }
       ]
     }
