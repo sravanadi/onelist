@@ -107,12 +107,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <head suppressHydrationWarning>
         <meta name="google-adsense-account" content="ca-pub-8571668306319206" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8571668306319206"
-          crossOrigin="anonymous" />
+          crossOrigin="anonymous" suppressHydrationWarning />
         <script src="https://3nbf4.com/88/p.js" async defer></script>
-        <script dangerouslySetInnerHTML={{
+        <script suppressHydrationWarning dangerouslySetInnerHTML={{
           __html: `(function(s){s.dataset.zone='10775611',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
         }} />
       </head>

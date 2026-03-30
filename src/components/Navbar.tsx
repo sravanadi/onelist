@@ -42,6 +42,12 @@ export default function Navbar() {
                             Calculator
                         </a>
                         <Link 
+                            href="/online-games" 
+                            className="hidden md:inline-flex items-center px-4 py-2 text-sm font-bold rounded-lg text-white bg-primary/20 border border-primary/50 hover:bg-primary/40 transition-colors"
+                        >
+                            OneList Games
+                        </Link>
+                        <Link 
                             href="/varieties" 
                             className="hidden md:inline-flex items-center px-4 py-2 text-sm font-bold rounded-lg text-white bg-primary/20 border border-primary/50 hover:bg-primary/40 transition-colors"
                         >
@@ -91,6 +97,13 @@ export default function Navbar() {
                         >
                             Calculator
                         </a>
+                        <Link 
+                            href="/online-games" 
+                            onClick={() => setIsOpen(false)}
+                            className="block px-4 py-3 text-sm font-bold rounded-lg text-white bg-primary/20 border border-primary/50 hover:bg-primary/40 transition-colors"
+                        >
+                            OneList Games
+                        </Link>
                         <Link 
                             href="/varieties" 
                             onClick={() => setIsOpen(false)}

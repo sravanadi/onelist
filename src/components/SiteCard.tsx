@@ -1,4 +1,5 @@
 import { Site } from '@/data/sites';
+import Link from 'next/link';
 
 export default function SiteCard({ site }: { site: Site }) {
     // Extract domain for display if possible, otherwise use name
@@ -8,13 +9,71 @@ export default function SiteCard({ site }: { site: Site }) {
     const isGitHub = site.url.includes('github.com') || site.url.includes('github.io');
     const logoSrc = isGitHub ? '/github-logo.png' : (site.logo && site.logo !== '/placeholder.png' ? site.logo : null);
 
-    return (
-        <a
-            href={site.url}
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-            className="flex flex-col gap-2 w-full bg-[#1c212d] hover:bg-[#252b3a] border border-[#2d3548] py-4 px-6 rounded-xl text-white transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-sm text-center md:text-left"
-        >
+    const isInternal = site.url.startsWith('/');
+    const isGame = site.categoryId === 'online-games';
+
+    // Game card variant — larger icon, play button style
+    if (isGame) {
+        const gameContent = (
+            <div className="flex items-center gap-4">
+                {/* Game Icon */}
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-linear-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0 border-2 border-yellow-300/30">
+                    {logoSrc ? (
+                        <img 
+                            src={logoSrc} 
+                            alt={site.name} 
+                            className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                        />
+                    ) : (
+                        <span className="text-3xl sm:text-4xl">🎮</span>
+                    )}
+                </div>
+                {/* Game Info */}
+                <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 flex-wrap">
+                        <span className="text-lg sm:text-xl font-bold text-white truncate">
+                            {site.name}
+                        </span>
+                        {site.tags?.slice(0, 3).map(tag => (
+                            <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-gray-400 hidden sm:inline">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                    {site.description && (
+                        <p className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors line-clamp-2 mt-1">
+                            {site.description}
+                        </p>
+                    )}
+                    <div className="flex items-center gap-3 mt-2">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 bg-yellow-400/10 px-3 py-1 rounded-full">
+                            ▶ Play Now
+                        </span>
+                        <span className="text-[10px] text-gray-500">Free • No Download</span>
+                    </div>
+                </div>
+            </div>
+        );
+
+        const gameClasses = "flex flex-col gap-2 w-full bg-gradient-to-r from-[#1c212d] to-[#1a1f2e] hover:from-[#252b3a] hover:to-[#222840] border border-yellow-500/20 hover:border-yellow-500/40 py-5 px-6 rounded-2xl text-white transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-lg shadow-yellow-500/5 hover:shadow-yellow-500/10";
+
+        if (isInternal) {
+            return (
+                <Link href={site.url} className={gameClasses}>
+                    {gameContent}
+                </Link>
+            );
+        }
+        return (
+            <a href={site.url} target="_blank" rel="nofollow noopener noreferrer" className={gameClasses}>
+                {gameContent}
+            </a>
+        );
+    }
+
+    // Default card variant
+    const cardContent = (
+        <>
             <div className="flex items-center justify-center md:justify-start gap-3">
                 {logoSrc ? (
                     <img 
@@ -36,6 +95,27 @@ export default function SiteCard({ site }: { site: Site }) {
                     {site.description}
                 </p>
             )}
+        </>
+    );
+
+    const commonClasses = "flex flex-col gap-2 w-full bg-[#1c212d] hover:bg-[#252b3a] border border-[#2d3548] py-4 px-6 rounded-xl text-white transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-sm text-center md:text-left";
+
+    if (isInternal) {
+        return (
+            <Link href={site.url} className={commonClasses}>
+                {cardContent}
+            </Link>
+        );
+    }
+
+    return (
+        <a
+            href={site.url}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            className={commonClasses}
+        >
+            {cardContent}
         </a>
     );
 }

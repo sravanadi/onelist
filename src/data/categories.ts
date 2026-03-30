@@ -34,5 +34,6 @@ export const categories = [
     { id: 'open-source-tools', name: 'Open Source Tools', image: '/icons/open-source.png', slug: '/open-source-tools', description: 'Comprehensive directory of 100+ open-source AI tools and framework' },
     { id: 'jobs', name: 'Jobs', image: '/icons/jobs.png', slug: '/jobs', description: 'Global and niche job boards, remote work platforms, and career resources' },
     { id: 'educational-tools', name: 'Educational Tools', image: '/icons/educational-tools.png', slug: '/educational-tools', description: 'Access a wealth of knowledge with free courses, documentaries, and interactive learning resources.' },
-    { id: 'developer-tools', name: 'Developer Tools', image: '/icons/developer-tools.png', slug: '/developer-tools', description: 'Curated directory of free developer tools, communities, news, and resources for software engineering.' }
+    { id: 'developer-tools', name: 'Developer Tools', image: '/icons/developer-tools.png', slug: '/developer-tools', description: 'Curated directory of free developer tools, communities, news, and resources for software engineering.' },
+    { id: 'online-games', name: 'OneList Games', image: '/icons/games.png', slug: '/online-games', description: 'Play the best free browser-based arcade, puzzle, and action games online on OneList.' }
 ];

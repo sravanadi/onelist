@@ -19,6 +19,20 @@ export type Site = {
 
 export const featuredSites: Site[] = [
   {
+    "id": "flycat-01",
+    "name": "Fly Cat",
+    "url": "/online-games/flycat",
+    "logo": "/games/flycat/favicon.png",
+    "displayUrl": "🐱 Fly Cat — Arcade",
+    "description": "PLAY NOW FREE — A Flappy Bird style arcade game where you control a cute flying cat. Dodge obstacles, set high scores, and customize your character!",
+    "categoryId": "online-games",
+    "tags": ["Free", "Arcade", "Flappy Bird", "Browser Game", "Mobile Friendly"],
+    "badges": ["New", "Free", "Editor Pick"],
+    "rating": 5.0,
+    "addedAt": "2024-03-28",
+    "language": "English"
+  },
+  {
     "id": "10",
     "name": "Soap2night",
     "url": "https://soap2night.cc",
