@@ -11,11 +11,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const staticPages = [
         '',
         '/about',
+        '/faq',
+        '/safety',
         '/contact',
         '/privacy',
         '/dmca',
         '/blog',
         '/terms',
+        '/online-games/flycat',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
