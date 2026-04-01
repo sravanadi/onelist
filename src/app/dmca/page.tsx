@@ -22,10 +22,10 @@ export const metadata: Metadata = {
 export default function DmcaPage() {
     return (
         <div className="max-w-4xl mx-auto px-4 py-16 min-h-screen">
-            <h1 className="text-4xl font-bold text-white mb-8">DMCA & Legal Notice</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-8">DMCA & Legal Notice</h1>
 
-            <div className="prose prose-invert max-w-none text-muted-foreground space-y-6">
-                <div className="bg-primary/10 border border-primary/30 rounded-lg p-6 mb-8 text-white">
+            <div className="prose dark:prose-invert max-w-none text-muted-foreground space-y-6">
+                <div className="bg-primary/10 border border-primary/30 rounded-lg p-6 mb-8 text-foreground">
                     <p className="font-bold mb-2">Important Notice:</p>
                     <p>OneList is an informational directory and search engine. <strong>We do not host, upload, or manage any video files, media, or copyrighted content on our servers.</strong> We simply provide links to third-party websites that are publicly available on the internet.</p>
                 </div>

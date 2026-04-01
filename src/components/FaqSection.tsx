@@ -32,7 +32,7 @@ export default function FaqSection({ items, title = "Frequently Asked Questions"
     return (
         <section className="mt-16 pt-16 border-t border-border">
             <JsonLd data={faqSchema} />
-            <h2 className="text-3xl font-black text-white mb-8">{title}</h2>
+            <h2 className="text-3xl font-black text-foreground mb-8">{title}</h2>
             <div className="space-y-4">
                 {items.map((item, index) => (
                     <div 
@@ -43,7 +43,7 @@ export default function FaqSection({ items, title = "Frequently Asked Questions"
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
                             className="w-full flex items-center justify-between p-6 text-left focus:outline-none group"
                         >
-                            <span className="text-lg font-bold text-white group-hover:text-primary transition-colors">
+                            <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                                 {item.question}
                             </span>
                             <span className={`text-xl text-primary transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
@@ -54,7 +54,7 @@ export default function FaqSection({ items, title = "Frequently Asked Questions"
                             className={`transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-[500px] opacity-100 p-6 pt-0 border-t border-border/50' : 'max-h-0 opacity-0 px-6 overflow-hidden'}`}
                         >
                             <p 
-                                className="text-gray-400 leading-relaxed font-medium"
+                                className="text-muted-foreground leading-relaxed font-medium"
                                 dangerouslySetInnerHTML={{ __html: item.answer }}
                             />
                         </div>

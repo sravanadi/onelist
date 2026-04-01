@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <div className="max-w-3xl mx-auto px-4 py-16 min-h-screen">
-            <h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-4">Contact Us</h1>
             <p className="text-muted-foreground mb-12">
                 Have a question, feedback, or a site suggestion? Fill out the form below and our team will get back to you.
             </p>
@@ -30,18 +30,18 @@ export default function ContactPage() {
             <form className="bg-card border border-border rounded-2xl p-6 md:p-8 space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                        <input type="text" id="name" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Your name" />
+                        <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-2">Name</label>
+                        <input type="text" id="name" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Your name" />
                     </div>
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
-                        <input type="email" id="email" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="you@example.com" />
+                        <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-2">Email Address</label>
+                        <input type="email" id="email" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="you@example.com" />
                     </div>
                 </div>
 
                 <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">Subject</label>
-                    <select id="subject" className="w-full bg-background border border-border rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+                    <label htmlFor="subject" className="block text-sm font-medium text-muted-foreground mb-2">Subject</label>
+                    <select id="subject" className="w-full bg-card border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
                         <option>General Inquiry</option>
                         <option>Site Suggestion</option>
                         <option>Report a Broken Link</option>

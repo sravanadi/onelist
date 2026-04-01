@@ -49,7 +49,7 @@ export default function Home() {
       <JsonLd data={homePageSchema} />
 
       {/* Hero Section */}
-      <section className="relative px-4 pt-20 pb-24 border-b border-border flex items-center justify-center bg-linear-to-b from-background to-[#141414]">
+      <section className="relative px-4 pt-20 pb-24 border-b border-border flex items-center justify-center bg-linear-to-b from-background to-card">
         <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
           {/* Abstract glowing background effect */}
           <div className="absolute -top-40 -left-40 w-96 h-96 bg-primary rounded-full mix-blend-screen filter blur-[128px]"></div>
@@ -57,7 +57,7 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 text-center max-w-4xl mx-auto w-full">
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-black text-foreground mb-6 tracking-tight">
             Find the Best <span className="text-primary">Free Streaming Sites</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
@@ -73,7 +73,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <LegalDisclaimer />
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white">Browse Categories</h2>
+            <h2 className="text-3xl font-bold text-foreground">Browse Categories</h2>
             <p className="text-muted-foreground mt-2">Explore 16+ categories of entertainment platforms.</p>
           </div>
 
@@ -90,7 +90,7 @@ export default function Home() {
       <section className="py-20 px-4 bg-background border-t border-border">
         <div className="max-w-4xl mx-auto">
           <div className="bg-card/30 border border-border/50 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-10 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-black text-foreground mb-10 leading-tight">
               {seoData.home_extended.title}
             </h2>
             
@@ -98,7 +98,7 @@ export default function Home() {
               {seoData.home_extended.sections.map((section, idx) => (
                 <div key={idx} className="relative">
                   {idx > 0 && idx < 4 && (
-                    <h3 className="text-xl font-bold text-white mb-4">{section.heading}</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-4">{section.heading}</h3>
                   )}
                   <p 
                     className="text-muted-foreground leading-relaxed text-lg"

@@ -52,7 +52,7 @@ export default function FlyCatPage() {
                             <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-purple-500/15 blur-[80px] pointer-events-none"></div>
 
                             <iframe
-                                src="/games/flycat/"
+                                src="/games/flycat/index.html"
                                 className="w-full h-full border-none rounded-xl sm:rounded-2xl"
                                 title="Fly Cat Game"
                                 allow="autoplay"

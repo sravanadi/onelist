@@ -7,8 +7,10 @@ import { categories } from '@/data/categories';
 import { featuredSites, Site } from '@/data/sites';
 import { openSourceTools } from '@/data/open-source-tools';
 import { jobs } from '@/data/jobs';
+import { useLanguage } from './LanguageProvider';
 
 export default function SearchSection() {
+    const { t, tContent } = useLanguage();
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<{ type: 'category' | 'site' | 'sub-category', id: string, name: string, image?: string, slug?: string, url?: string, categoryName?: string }[]>([]);
     const [isFocused, setIsFocused] = useState(false);
@@ -30,11 +32,11 @@ export default function SearchSection() {
 
         // Search categories
         const matchedCategories = categories
-            .filter(c => !c.isHidden && (c.name.toLowerCase().includes(searchTerm) || c.description.toLowerCase().includes(searchTerm)))
+            .filter(c => !c.isHidden && (tContent(c.name).toLowerCase().includes(searchTerm) || tContent(c.description).toLowerCase().includes(searchTerm)))
             .map(c => ({
                 type: 'category' as const,
                 id: c.id,
-                name: c.name,
+                name: tContent(c.name),
                 image: c.image,
                 slug: c.slug
             }));
@@ -75,13 +77,16 @@ export default function SearchSection() {
         const matchedSites = allSearchableSites
             .filter(s => s.name.toLowerCase().includes(searchTerm) || s.description.toLowerCase().includes(searchTerm) || s.tags.some(t => t.toLowerCase().includes(searchTerm)))
             .slice(0, 15) // Increased limit
-            .map(s => ({
-                type: 'site' as const,
-                id: s.id,
-                name: s.name,
-                url: s.url,
-                categoryName: categories.find(c => c.id === s.categoryId)?.name || 'Tools'
-            }));
+            .map(s => {
+                const category = categories.find(c => c.id === s.categoryId);
+                return {
+                    type: 'site' as const,
+                    id: s.id,
+                    name: s.name,
+                    url: s.url,
+                    categoryName: category ? tContent(category.name) : 'Tools'
+                };
+            });
 
         setResults([...matchedCategories, ...matchedSubCategories, ...matchedSites].slice(0, 20));
     }, [query]);
@@ -108,8 +113,8 @@ export default function SearchSection() {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                     onFocus={() => setIsFocused(true)}
-                    className="block w-full text-lg bg-card border-2 border-border rounded-full pl-12 pr-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-lg"
-                    placeholder="Search for a site, category, or keyword..."
+                    className="block w-full text-lg bg-card border-2 border-border rounded-full pl-12 pr-6 py-4 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-lg"
+                    placeholder={t('search.placeholder')}
                 />
                 <button className="absolute right-2 top-2 bottom-2 bg-primary hover:bg-[#b0060e] text-white font-semibold px-6 rounded-full transition-colors">
                     Search
@@ -118,7 +123,7 @@ export default function SearchSection() {
 
             {/* Results Dropdown */}
             {isFocused && (query.trim()) && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-[#1a1a1a] border border-border rounded-2xl shadow-2xl overflow-hidden z-50 max-h-[400px] overflow-y-auto">
+                <div className="absolute top-full left-0 right-0 mt-2 bg-card border border-border rounded-2xl shadow-2xl overflow-hidden z-50 max-h-[400px] overflow-y-auto">
                     {results.length > 0 ? (
                         <div className="py-2">
                             {results.map((result) => (
@@ -126,7 +131,7 @@ export default function SearchSection() {
                                     key={`${result.type}-${result.id}`}
                                     href={(result.type === 'category' || result.type === 'sub-category') ? result.slug! : result.url!}
                                     target={result.type === 'site' ? '_blank' : '_self'}
-                                    className="flex items-center gap-4 px-6 py-3 hover:bg-white/5 transition-colors border-b border-white/5 last:border-0"
+                                    className="flex items-center gap-4 px-6 py-3 hover:bg-accent/50 transition-colors border-b border-border/50 last:border-0"
                                     onClick={() => setIsFocused(false)}
                                 >
                                     <div className="w-10 h-10 bg-card rounded-lg flex items-center justify-center shrink-0 border border-border">
@@ -137,9 +142,9 @@ export default function SearchSection() {
                                         )}
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="text-white font-bold">{result.name}</span>
+                                        <span className="text-foreground font-bold">{result.name}</span>
                                         <span className="text-xs text-muted-foreground uppercase tracking-wider">
-                                            {result.type === 'category' ? 'Category' : result.type === 'sub-category' ? `Sub-category in ${result.categoryName}` : `Site in ${result.categoryName}`}
+                                            {result.type === 'category' ? t('footer.categories') : result.type === 'sub-category' ? `Sub-category in ${result.categoryName}` : `Site in ${result.categoryName}`}
                                         </span>
                                     </div>
                                     <span className="ml-auto text-gray-600">
@@ -150,7 +155,7 @@ export default function SearchSection() {
                         </div>
                     ) : (
                         <div className="px-6 py-8 text-center text-muted-foreground italic">
-                            No results found for "{query}"
+                            {t('search.noResults')} "{query}"
                         </div>
                     )}
                 </div>

@@ -29,7 +29,7 @@ export default function VarietiesPage() {
   const breadcrumbSchema = getBreadcrumbSchema("Varieties", "/varieties");
 
   return (
-    <div className="min-h-screen bg-background text-white pt-24 pb-16 px-4 md:px-8">
+    <div className="min-h-screen bg-background pt-24 pb-16 px-4 md:px-8">
       <JsonLd data={breadcrumbSchema} />
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
@@ -40,10 +40,10 @@ export default function VarietiesPage() {
           >
             ← Back to Home
           </Link>
-          <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase italic">
+          <h1 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter uppercase italic text-foreground">
             <span className="text-primary">✨ VARIETIES</span> SITES
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto font-medium">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-medium">
             Curated Directory of the World's Most Useful, Fun, and Interesting Websites.
           </p>
         </div>
@@ -63,10 +63,10 @@ export default function VarietiesPage() {
           {varietiesData.map((category) => (
             <section key={category.title} id={category.title.toLowerCase().replace(/\s+/g, '-')}>
               <div className="flex items-center gap-4 mb-8">
-                <h2 className="text-2xl md:text-3xl font-black uppercase italic tracking-tight">
+                <h2 className="text-2xl md:text-3xl font-black uppercase italic tracking-tight text-foreground">
                   {category.title}
                 </h2>
-                <div className="h-px flex-1 bg-white/10" />
+                <div className="h-px flex-1 bg-border" />
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -76,7 +76,7 @@ export default function VarietiesPage() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`group relative bg-[#141414] rounded-xl p-5 border ${link.isImportant ? 'border-primary/30 shadow-[0_0_20px_rgba(229,9,20,0.05)]' : 'border-white/5'} hover:border-primary/50 transition-all duration-300 flex flex-col h-full`}
+                    className={`group relative bg-card rounded-xl p-5 border ${link.isImportant ? 'border-primary/30 shadow-[0_0_20px_rgba(229,9,20,0.05)]' : 'border-border'} hover:border-primary/50 transition-all duration-300 flex flex-col h-full`}
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-2">
@@ -93,12 +93,12 @@ export default function VarietiesPage() {
                     </div>
                     
                     {link.description && (
-                      <p className="text-sm text-gray-400 font-medium line-clamp-2 leading-relaxed mb-4">
+                      <p className="text-sm text-muted-foreground font-medium line-clamp-2 leading-relaxed mb-4">
                         {link.description}
                       </p>
                     )}
                     
-                    <div className="mt-auto flex items-center text-[10px] font-black uppercase text-white/30 tracking-widest group-hover:text-primary/60 transition-colors">
+                    <div className="mt-auto flex items-center text-[10px] font-black uppercase text-muted-foreground/50 tracking-widest group-hover:text-primary transition-colors">
                       Visit Site →
                     </div>
                   </a>

@@ -1,5 +1,7 @@
+'use client';
 import { Site } from '@/data/sites';
 import Link from 'next/link';
+import { useLanguage } from './LanguageProvider';
 
 export default function SiteCard({ site }: { site: Site }) {
     // Extract domain for display if possible, otherwise use name
@@ -11,6 +13,7 @@ export default function SiteCard({ site }: { site: Site }) {
 
     const isInternal = site.url.startsWith('/');
     const isGame = site.categoryId === 'online-games';
+    const { t } = useLanguage();
 
     // Game card variant — larger icon, play button style
     if (isGame) {
@@ -31,31 +34,31 @@ export default function SiteCard({ site }: { site: Site }) {
                 {/* Game Info */}
                 <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                        <span className="text-lg sm:text-xl font-bold text-white truncate">
+                        <span className="text-lg sm:text-xl font-bold text-foreground truncate">
                             {site.name}
                         </span>
                         {site.tags?.slice(0, 3).map(tag => (
-                            <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 text-gray-400 hidden sm:inline">
+                            <span key={tag} className="text-[10px] px-2 py-0.5 rounded-full bg-accent/20 text-muted-foreground hidden sm:inline">
                                 {tag}
                             </span>
                         ))}
                     </div>
                     {site.description && (
-                        <p className="text-xs sm:text-sm text-gray-400 group-hover:text-gray-300 transition-colors line-clamp-2 mt-1">
+                        <p className="text-xs sm:text-sm text-muted-foreground group-hover:text-foreground transition-colors line-clamp-2 mt-1">
                             {site.description}
                         </p>
                     )}
                     <div className="flex items-center gap-3 mt-2">
                         <span className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 bg-yellow-400/10 px-3 py-1 rounded-full">
-                            ▶ Play Now
+                            ▶ {t('games.play_now')}
                         </span>
-                        <span className="text-[10px] text-gray-500">Free • No Download</span>
+                        <span className="text-[10px] text-muted-foreground/60">{t('games.free_no_download')}</span>
                     </div>
                 </div>
             </div>
         );
 
-        const gameClasses = "flex flex-col gap-2 w-full bg-gradient-to-r from-[#1c212d] to-[#1a1f2e] hover:from-[#252b3a] hover:to-[#222840] border border-yellow-500/20 hover:border-yellow-500/40 py-5 px-6 rounded-2xl text-white transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-lg shadow-yellow-500/5 hover:shadow-yellow-500/10";
+        const gameClasses = "flex flex-col gap-2 w-full bg-card hover:bg-accent border border-yellow-500/20 hover:border-yellow-500/40 py-5 px-6 rounded-2xl text-foreground transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-lg shadow-yellow-500/5 hover:shadow-yellow-500/10";
 
         if (isInternal) {
             return (
@@ -82,7 +85,7 @@ export default function SiteCard({ site }: { site: Site }) {
                         className="w-5 h-5 object-contain filter group-hover:brightness-110 transition-all"
                     />
                 ) : (
-                    <span className="text-white/80 group-hover:text-primary transition-colors text-lg shrink-0">
+                    <span className="text-foreground group-hover:text-primary transition-colors text-lg shrink-0">
                         ▶
                     </span>
                 )}
@@ -91,14 +94,14 @@ export default function SiteCard({ site }: { site: Site }) {
                 </span>
             </div>
             {site.description && (
-                <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors line-clamp-2 md:line-clamp-none">
+                <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors line-clamp-2 md:line-clamp-none">
                     {site.description}
                 </p>
             )}
         </>
     );
 
-    const commonClasses = "flex flex-col gap-2 w-full bg-[#1c212d] hover:bg-[#252b3a] border border-[#2d3548] py-4 px-6 rounded-xl text-white transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-sm text-center md:text-left";
+    const commonClasses = "flex flex-col gap-2 w-full bg-card hover:bg-accent border border-border py-4 px-6 rounded-xl text-foreground transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-sm text-center md:text-left";
 
     if (isInternal) {
         return (

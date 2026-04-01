@@ -181,12 +181,12 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search within this category..."
-                        className="w-full bg-card border border-border rounded-lg pl-10 pr-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm"
+                        className="w-full bg-card border border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm"
                     />
                     {searchQuery && (
                         <button
                             onClick={() => setSearchQuery('')}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                         >
                             ✕
                         </button>
@@ -196,17 +196,17 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
                 <div className="flex flex-wrap gap-2">
                     <button
                         onClick={() => setFilter('All')}
-                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'All' ? 'bg-primary text-white' : 'bg-card border border-border text-gray-300 hover:text-white'}`}>
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'All' ? 'bg-primary text-white' : 'bg-card border border-border text-muted-foreground hover:text-foreground'}`}>
                         All
                     </button>
                     <button
                         onClick={() => setFilter('Free')}
-                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'Free' ? 'bg-primary text-white' : 'bg-card border border-border text-gray-300 hover:text-white'}`}>
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'Free' ? 'bg-primary text-white' : 'bg-card border border-border text-muted-foreground hover:text-foreground'}`}>
                         Free
                     </button>
                     <button
                         onClick={() => setFilter('Paid')}
-                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'Paid' ? 'bg-primary text-white' : 'bg-card border border-border text-gray-300 hover:text-white'}`}>
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${filter === 'Paid' ? 'bg-primary text-white' : 'bg-card border border-border text-muted-foreground hover:text-foreground'}`}>
                         Paid
                     </button>
                 </div>
@@ -214,7 +214,7 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
 
             {/* Recommendation Header */}
             <div className="text-center mb-10">
-                <p className="text-lg md:text-xl font-medium text-gray-300">
+                <p className="text-lg md:text-xl font-medium text-muted-foreground">
                     <Link href="/adblockers" className="text-[#38bdf8] hover:text-[#7dd3fc] underline underline-offset-4 decoration-1">AdBlock</Link>
                     {" is recommended and use "}
                     <Link href="/vpn" className="text-[#38bdf8] hover:text-[#7dd3fc] underline underline-offset-4 decoration-1">VPN</Link>
@@ -229,7 +229,7 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
                         {Object.entries(groupedSites).map(([groupName, sites]) => (
                             sites.length > 0 && (
                                 <div key={groupName} id={groupName.replace(/\s+/g, '-').toLowerCase()} className="flex flex-col gap-4 scroll-mt-24">
-                                    <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                                    <h2 className="text-2xl font-bold text-foreground flex items-center gap-2">
                                         <span className="w-1.5 h-6 bg-primary rounded-full"></span>
                                         {groupName}
                                     </h2>
@@ -255,7 +255,7 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
                 )
             ) : (
                 <div className="py-20 text-center border border-border border-dashed rounded-xl bg-card">
-                    <h3 className="text-xl font-bold text-white mb-2">No Sites Found</h3>
+                    <h3 className="text-xl font-bold text-foreground mb-2">No Sites Found</h3>
                     <p className="text-muted-foreground mt-2">No sites found matching your criteria.</p>
                 </div>
             )}

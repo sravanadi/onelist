@@ -4,19 +4,19 @@ import Link from 'next/link';
 export default function SafetyNote({ content }: { content?: string }) {
   return (
     <section className="mt-16 mb-8">
-      <div className="bg-linear-to-br from-[#1a1a1a] to-[#111] border border-white/5 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+      <div className="bg-card border border-border rounded-3xl p-8 md:p-12 shadow-sm relative overflow-hidden">
         {/* Abstract background element */}
         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-          <span className="text-8xl font-black italic">SAFE</span>
+          <span className="text-8xl font-black italic text-foreground opacity-5">SAFE</span>
         </div>
 
         <div className="relative z-10">
-          <h2 className="text-2xl font-black text-white mb-6 uppercase tracking-tight flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground mb-6 tracking-tight flex items-center gap-3">
             <span className="w-1.5 h-8 bg-primary rounded-full"></span>
             Streaming Safety & Privacy Advice
           </h2>
           
-          <div className="prose prose-invert max-w-none text-gray-400 font-medium leading-relaxed">
+          <div className="prose prose-neutral dark:prose-invert max-w-none text-muted-foreground font-medium leading-relaxed">
             {content ? (
               <p>{content}</p>
             ) : (

@@ -1,25 +1,38 @@
 export interface CategorySeo {
-    title: string;
-    paragraphs: string[];
-    bullets?: string[];
+    title: string | any;
+    paragraphs: (string | any)[];
+    bullets?: (string | any)[];
     faqs?: { question: string; answer: string; }[];
-    safetyNote?: string;
+    safetyNote?: string | any;
 }
 
 export const CATEGORY_SEO_DATA: Record<string, { intro: CategorySeo }> = {
   movies: {
     intro: {
-      title: "Free Movie Streaming Sites 2026 — Watch Movies Online Worldwide",
+      title: {
+        en: "Free Movie Streaming Sites 2026 — Watch Movies Online Worldwide",
+        es: "Sitios de Streaming de Películas Gratis 2026 — Ver Películas Online en Todo el Mundo",
+        fr: "Sites de Streaming de Films Gratuits 2026 — Regardez des Films en Ligne dans le Monde Entier",
+        ru: "Бесплатные сайты для стриминга фильмов 2026 — Смотрите фильмы онлайн по всему миру",
+        zh: "2026年免费电影流媒体网站 — 在全球范围内在线观看电影",
+        hi: "फ्री मूवी स्ट्रीमिंग साइट्स 2026 — दुनिया भर में ऑनलाइन फिल्में देखें"
+      },
       paragraphs: [
-        "Finding the best free movie streaming sites in 2026 can be a daunting task, as mirrors frequently move or go offline. Our curated directory is designed to help users worldwide discover high-quality, reliable platforms to watch movies online without the need for a sign-up or monthly subscription. Whether you are looking for the latest blockbusters, independent cinema, or classic films, these platforms offer diverse libraries accessible from any corner of the globe.",
-        "The digital entertainment landscape has shifted significantly, with many users seeking 123movies alternatives and Soap2night mirrors that provide a secure, HD experience. The sites listed below have been manually verified to ensure they offer a consistent streaming experience no matter your location. From international cinema to major Hollywood releases, we focus on platforms that prioritise ease of use and content depth for a truly global audience.",
-        "We understand that accessibility varies by region, which is why we provide a wide range of options that work across different jurisdictions. No matter where you are, you can find a platform that suits your connection speed and device. Our mission is to simplify your search for free HD movie streaming, bringing the best of the internet's library to one organised location for everyone to enjoy safely."
+        {
+          en: "Finding the best free movie streaming sites in 2026 can be a daunting task, as mirrors frequently move or go offline. Our curated directory is designed to help users worldwide discover high-quality, reliable platforms to watch movies online without the need for a sign-up or monthly subscription. Whether you are looking for the latest blockbusters, independent cinema, or classic films, these platforms offer diverse libraries accessible from any corner of the globe.",
+          es: "Encontrar los mejores sitios de transmisión de películas gratuitas en 2026 puede ser una tarea ardua, ya que los espejos se mueven o se desconectan con frecuencia. Nuestro directorio está diseñado para ayudar a los usuarios de todo el mundo a descubrir plataformas de alta calidad y confiables para ver películas en línea sin necesidad de registrarse ni pagar suscripciones mensuales.",
+          fr: "Trouver les meilleurs sites de streaming de films gratuits en 2026 peut être une tâche ardue, car les miroirs se déplacent ou se déconnectent fréquemment. Notre répertoire est conçu pour aider les utilisateurs du monde entier à découvrir des plateformes de haute qualité et fiables pour regarder des films en ligne sans inscription ni abonnement mensuel."
+        },
+        {
+          en: "The digital entertainment landscape has shifted significantly, with many users seeking 123movies alternatives and Soap2night mirrors that provide a secure, HD experience.",
+          es: "El panorama del entretenimiento digital ha cambiado significativamente, y muchos usuarios buscan alternativas a 123movies y espejos de Soap2night que brinden una experiencia HD segura.",
+          fr: "Le paysage du divertissement numérique a considérablement évolué, de nombreux utilisateurs recherchant des alternatives à 123movies et des miroirs Soap2night offrant une expérience HD sécurisée."
+        }
       ],
       bullets: [
-        "Verified 123movies alternatives and working mirrors",
-        "High-definition (HD) streaming without sign-up",
-        "Global accessibility with no regional modifiers",
-        "Diverse libraries including latest releases and classics"
+        { en: "Verified 123movies alternatives and working mirrors", es: "Alternativas verificadas de 123movies y espejos funcionales", fr: "Alternatives vérifiées à 123movies et miroirs fonctionnels" },
+        { en: "High-definition (HD) streaming without sign-up", es: "Streaming en alta definición (HD) sin registro", fr: "Streaming haute définition (HD) sans inscription" },
+        { en: "Global accessibility with no regional modifiers", es: "Accesibilidad global sin modificadores regionales", fr: "Accessibilité mondiale sans modificateurs régionaux" }
       ],
       faqs: [
         {

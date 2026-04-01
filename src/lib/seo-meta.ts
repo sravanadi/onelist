@@ -91,6 +91,18 @@ export const SEO_META = {
     title: "Privacy Policy — OneList.pro",
     description: "Your privacy matters to us. Read how we protect your data while using our curated directory."
   },
+  terms: {
+    title: "Terms of Service — OneList.pro",
+    description: "Read our terms of service and conditions for using our curated directory safely and responsibly."
+  },
+  faq: {
+    title: "FAQ — Frequently Asked Questions | OneList.pro",
+    description: "Find answers to commonly asked questions about using OneList.pro safely and effectively."
+  },
+  safety: {
+    title: "Safety Manual — Streaming & Privacy Guide | OneList.pro",
+    description: "Read our comprehensive safety manual for staying safe while browsing free streaming sites and AI tools."
+  },
   dmca: {
     title: "DMCA Policy — OneList.pro",
     description: "Read our DMCA policy for handling copyright infringement notices on our site."

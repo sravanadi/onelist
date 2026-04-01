@@ -60,7 +60,7 @@ export default async function RegionalPage({ params }: { params: Promise<{ regio
     return (
         <div className="flex flex-col min-h-screen">
             {/* Hero Section */}
-            <section className="relative px-4 pt-20 pb-24 border-b border-border flex items-center justify-center bg-linear-to-b from-background to-[#141414]">
+            <section className="relative px-4 pt-20 pb-24 border-b border-border flex items-center justify-center bg-linear-to-b from-background to-card">
                 <div className="absolute inset-0 overflow-hidden opacity-20 pointer-events-none">
                     <div className="absolute -top-40 -left-40 w-96 h-96 bg-primary rounded-full mix-blend-screen filter blur-[128px]"></div>
                     <div className="absolute top-20 right-0 w-72 h-72 bg-primary rounded-full mix-blend-screen filter blur-[128px]"></div>
@@ -71,7 +71,7 @@ export default async function RegionalPage({ params }: { params: Promise<{ regio
                         Global Access
                     </span>
                     <h1 
-                        className="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight"
+                        className="text-4xl md:text-5xl font-black text-foreground mb-6 leading-tight"
                         dangerouslySetInnerHTML={{ __html: data.h1 }}
                     />
                     <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
@@ -87,7 +87,7 @@ export default async function RegionalPage({ params }: { params: Promise<{ regio
                 <div className="max-w-7xl mx-auto">
                     <LegalDisclaimer />
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-white">Browse Categories</h2>
+                        <h2 className="text-4xl font-black text-foreground mb-2 tracking-tighter uppercase italic">Browse Categories</h2>
                         <p className="text-muted-foreground mt-2">Explore 16+ categories of entertainment platforms available in your region.</p>
                     </div>
 
@@ -103,7 +103,7 @@ export default async function RegionalPage({ params }: { params: Promise<{ regio
             <section className="py-20 px-4 bg-background border-t border-border">
                 <div className="max-w-5xl mx-auto">
                     <div className="bg-card/50 border border-border rounded-2xl p-8 md:p-12">
-                        <div className="prose prose-invert max-w-none text-gray-400 font-medium leading-relaxed mb-12">
+                        <div className="prose dark:prose-invert prose-lg max-w-none text-muted-foreground prose-headings:text-foreground prose-a:text-primary hover:prose-a:text-primary/80">
                             {data.introParagraphs.map((par, i) => (
                                 <p key={i} className="mb-4">{par}</p>
                             ))}

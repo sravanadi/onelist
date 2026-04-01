@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import { ThemeProvider } from "@/components/ThemeProvider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -100,13 +102,16 @@ export const metadata: Metadata = {
   },
 };
 
+import { LanguageProvider } from "@/components/LanguageProvider";
+import SEOHead from "@/components/SEOHead";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head suppressHydrationWarning>
         <meta name="google-adsense-account" content="ca-pub-8571668306319206" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8571668306319206"
@@ -116,14 +121,24 @@ export default function RootLayout({
           __html: `(function(s){s.dataset.zone='10775611',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
         }} />
       </head>
-      <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <JsonLd data={websiteSchema} />
-        <JsonLd data={organizationSchema} />
-        <Navbar />
-        <main className="grow">
-          {children}
-        </main>
-        <Footer />
+      <body className={`${inter.className} min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300`} suppressHydrationWarning>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <LanguageProvider>
+            <SEOHead />
+            <JsonLd data={websiteSchema} />
+            <JsonLd data={organizationSchema} />
+            <Navbar />
+            <main className="grow">
+              {children}
+            </main>
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

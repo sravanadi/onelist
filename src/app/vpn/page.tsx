@@ -30,7 +30,7 @@ export default function VpnPage() {
     const breadcrumbSchema = getBreadcrumbSchema("VPN", "/vpn");
 
     return (
-        <div className="flex flex-col min-h-screen bg-background text-white">
+        <div className="flex flex-col min-h-screen bg-background">
             <JsonLd data={breadcrumbSchema} />
             {/* Hero Section */}
             <section className="bg-card border-b border-border py-16 px-4">
@@ -39,7 +39,7 @@ export default function VpnPage() {
                         🛡️
                     </div>
                     <div>
-                        <h1 className="text-4xl font-bold text-white mb-2">Safe Streaming VPNs</h1>
+                        <h1 className="text-4xl font-bold text-foreground mb-2">Safe Streaming VPNs</h1>
                         <p className="text-muted-foreground max-w-2xl">
                             Avoid ISP throttling, bypass geo-restrictions, and protect your identity while streaming.
                             These are the VPNs we recommend for a zero-buffer experience.
@@ -52,7 +52,7 @@ export default function VpnPage() {
                 <LegalDisclaimer />
                 {/* Recommendation Header */}
                 <div className="text-center mb-10">
-                    <p className="text-lg md:text-xl font-medium text-gray-300">
+                    <p className="text-lg md:text-xl font-medium text-muted-foreground">
                         <Link href="/adblockers" className="text-[#38bdf8] hover:text-[#7dd3fc] underline underline-offset-4 decoration-1">AdBlock</Link>
                         {" is recommended and use "}
                         <span className="text-primary font-bold">VPN</span>
@@ -71,7 +71,7 @@ export default function VpnPage() {
 
                 {/* FAQ Section */}
                 <div className="bg-card border border-border rounded-2xl p-8 md:p-12 shadow-sm">
-                    <h2 className="text-3xl font-bold text-white mb-8 text-center">Why do I need a VPN?</h2>
+                    <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Why do I need a VPN?</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="text-center">
