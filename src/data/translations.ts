@@ -20,7 +20,15 @@ export const translations: Record<string, any> = {
         search: { placeholder: 'Search for a site, category, or keyword...', noResults: 'No results found for' },
         ui: { select_language: 'Select Language', search_languages: 'Search languages...', no_languages_found: 'No languages found.', total_languages: 'Global Connectivity Supported', related_categories: 'Related Categories', go_to_site: 'Go To Site', read_article: 'Read Article' },
         category: { introHeader: 'Quick Facts' },
-        games: { play_now: 'Play Now', free_no_download: 'Free • No Download' }
+        games: { play_now: 'Play Now', free_no_download: 'Free • No Download' },
+        hero: { 
+            title: 'Best Free Streaming Sites', 
+            description: 'The ultimate directory for free movies, TV shows, anime, sports, and AI tools. All verified, all free, updated daily.' 
+        },
+        sections: { 
+            browse_categories: 'Browse Categories', 
+            explore_categories: 'Explore 20+ specialized directories of free entertainment and productivity tools.' 
+        }
     },
     hi: {
         nav: { home: 'होम', movies: 'फिल्में', anime: 'एनीमे', sports: 'खेल', torrents: 'टोरेंट', about: 'हमारे बारे में', blog: 'ब्लॉग', vpn: 'सर्वश्रेष्ठ VPN', net_tools: 'नेट-टूल्स', typing_tools: 'टाइपिंग टूल्स', calculator: 'कैलकुलेटर', games: 'वनलिस्ट गेम्स', varieties: 'वैरायटी' },
@@ -43,7 +51,15 @@ export const translations: Record<string, any> = {
         search: { placeholder: 'साइट, श्रेणी या कीवर्ड खोजें...', noResults: 'के लिए कोई परिणाम नहीं मिला' },
         ui: { select_language: 'भाषा चुनें', search_languages: 'भाषाएं खोजें...', no_languages_found: 'कोई भाषा नहीं मिली।', total_languages: 'वैश्विक कनेक्टिविटी', related_categories: 'संबंधित श्रेणियाँ', go_to_site: 'साइट पर जाएं', read_article: 'लेख पढ़ें' },
         category: { introHeader: 'त्वरित तथ्य' },
-        games: { play_now: 'अभी खेलें', free_no_download: 'मुफ्त • कोई डाउनलोड नहीं' }
+        games: { play_now: 'अभी खेलें', free_no_download: 'मुफ्त • कोई डाउनलोड नहीं' },
+        hero: { 
+            title: 'सर्वश्रेष्ठ मुफ्त स्ट्रीमिंग साइटें', 
+            description: 'मुफ्त फिल्मों, टीवी शो, एनीमे, खेल और एआई टूल्स के लिए अंतिम निर्देशिका। सभी सत्यापित, सभी मुफ्त, दैनिक अपडेट।' 
+        },
+        sections: { 
+            browse_categories: 'श्रेणियां ब्राउज़ करें', 
+            explore_categories: 'मुफ्त मनोरंजन और उत्पादकता उपकरणों की 20+ विशेष निर्देशिकाओं का अन्वेषण करें।' 
+        }
     },
     es: {
         nav: { home: 'Inicio', movies: 'Películas', anime: 'Anime', sports: 'Deportes', torrents: 'Torrents', about: 'Nosotros', blog: 'Blog', vpn: 'Mejores VPN' },

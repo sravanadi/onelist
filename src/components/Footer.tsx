@@ -37,7 +37,7 @@ export default function Footer() {
                     {/* Brand & Social Column */}
                     <div className="lg:col-span-1">
                         <Link href="/" className="flex items-center space-x-3 group">
-                            <img src="/icon.png" alt="OneList Icon" className="h-10 w-auto drop-shadow-md group-hover:scale-110 transition-transform duration-300" />
+                            <img src="/icon.png" alt="OneList Icon" className="h-10 w-auto drop-shadow-md group-hover:scale-110 transition-transform duration-300 contrast-125 brightness-90 grayscale-[0.5] sepia-[0.2] hue-rotate-180" />
                             <span className="text-xl font-black text-primary tracking-tighter uppercase italic">OneList</span>
                         </Link>
                         <p className="mt-6 text-sm text-muted-foreground leading-relaxed">

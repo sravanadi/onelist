@@ -15,12 +15,12 @@ export default function SiteCard({ site }: { site: Site }) {
     const isGame = site.categoryId === 'online-games';
     const { t } = useLanguage();
 
-    // Game card variant — larger icon, play button style
+    // Game card variant — professional slate style
     if (isGame) {
         const gameContent = (
             <div className="flex items-center gap-4">
                 {/* Game Icon */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-linear-to-br from-yellow-400 to-orange-500 flex items-center justify-center shadow-lg shadow-yellow-500/20 shrink-0 border-2 border-yellow-300/30">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-linear-to-br from-primary to-accent flex items-center justify-center shadow-lg shadow-primary/10 shrink-0 border-2 border-primary/20">
                     {logoSrc ? (
                         <img 
                             src={logoSrc} 
@@ -49,7 +49,7 @@ export default function SiteCard({ site }: { site: Site }) {
                         </p>
                     )}
                     <div className="flex items-center gap-3 mt-2">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-yellow-400 bg-yellow-400/10 px-3 py-1 rounded-full">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-primary bg-primary/10 px-3 py-1 rounded-full">
                             ▶ {t('games.play_now')}
                         </span>
                         <span className="text-[10px] text-muted-foreground/60">{t('games.free_no_download')}</span>
@@ -58,7 +58,7 @@ export default function SiteCard({ site }: { site: Site }) {
             </div>
         );
 
-        const gameClasses = "flex flex-col gap-2 w-full bg-card hover:bg-accent border border-yellow-500/20 hover:border-yellow-500/40 py-5 px-6 rounded-2xl text-foreground transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-lg shadow-yellow-500/5 hover:shadow-yellow-500/10";
+        const gameClasses = "flex flex-col gap-2 w-full bg-card hover:bg-accent border border-border hover:border-primary/40 py-5 px-6 rounded-2xl text-foreground transition-all hover:scale-[1.01] active:scale-[0.99] group shadow-lg shadow-primary/5 hover:shadow-primary/10";
 
         if (isInternal) {
             return (

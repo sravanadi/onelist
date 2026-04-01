@@ -25,7 +25,7 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-16">
                     <div className="flex items-center">
                         <Link href="/" className="shrink-0 flex items-center space-x-3 group">
-                            <img src="/icon.png" alt="OneList Icon" className="h-12 w-auto drop-shadow-lg group-hover:scale-110 transition-transform duration-300" />
+                            <img src="/icon.png" alt="OneList — Free Streaming & AI Tools Directory" className="h-12 w-auto drop-shadow-lg group-hover:scale-110 transition-transform duration-300 contrast-125 brightness-90 grayscale-[0.5] sepia-[0.2] hue-rotate-180" />
                             <span className="text-2xl font-black text-primary tracking-tighter uppercase italic">OneList</span>
                         </Link>
                     </div>
