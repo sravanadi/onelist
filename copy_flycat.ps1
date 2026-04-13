@@ -15,6 +15,11 @@ Remove-Item "$dest\style.css" -ErrorAction SilentlyContinue
 # Copy all dist files (index.html, favicon.png, assets/)
 Copy-Item -Path "$source\*" -Destination "$dest" -Recurse -Force
 
+# Rename index.html to game.html to prevent Vercel trailing slash 404 bugs
+if (Test-Path "$dest\index.html") {
+    Rename-Item "$dest\index.html" "game.html" -Force
+}
+
 Write-Host "Done! Professional Fly Cat game files copied successfully." -ForegroundColor Green
 Write-Host "Files copied from: $source" 
 Write-Host "Files copied to:   $dest"
