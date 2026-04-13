@@ -38,6 +38,8 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
     const isJobsCategory = categorySlug === 'jobs';
     const isEducationalTools = categorySlug === 'educational-tools';
     const isDeveloperTools = categorySlug === 'developer-tools';
+    const isGamesCategory = categorySlug === 'games' || categorySlug === 'online-games';
+
 
     type GroupedSites = { [key: string]: Site[] };
     let groupedSites: GroupedSites = {};
@@ -166,7 +168,28 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
         if (others.length > 0) {
             groupedSites["Other Developer Tools"] = others;
         }
+    } else if (isGamesCategory) {
+        groupedSites = {
+            "🎮 Download Games": filteredSites.filter(s => s.tags.includes("Download-Games")),
+            "📦 Game Repacks": filteredSites.filter(s => s.tags.includes("Game-Repacks")),
+            "🕹️ Emulation & ROMs": filteredSites.filter(s => s.tags.includes("Emulation-ROMs") || s.tags.includes("Nintendo-ROMs") || s.tags.includes("Playstation-ROMs") || s.tags.includes("Browser-Emulators")),
+            "💾 Abandonware & Retro": filteredSites.filter(s => s.tags.includes("Abandonware-Retro")),
+            "🛠️ Decompilations & Ports": filteredSites.filter(s => s.tags.includes("Decomps-Ports")),
+            "✨ Remakes & Recreations": filteredSites.filter(s => s.tags.includes("Remakes-Recreations")),
+            "🌟 Special Interest": filteredSites.filter(s => s.tags.includes("Special-Interest")),
+            "🕶️ Virtual Reality": filteredSites.filter(s => s.tags.includes("Virtual-Reality")),
+            "🧩 Puzzle & Logic Games": filteredSites.filter(s => s.tags.includes("Puzzle-Games") || s.tags.includes("Tetris-Games")),
+            "♟️ Tabletop & Chess": filteredSites.filter(s => s.tags.includes("Tabletop-Games")),
+            "🌐 Browser Games": filteredSites.filter(s => s.tags.includes("Browser-Games") || s.tags.includes("GeoGuessr-Games"))
+        };
+
+        const categorizedIds = new Set(Object.values(groupedSites).flat().map(s => s.id));
+        const others = filteredSites.filter(s => !categorizedIds.has(s.id));
+        if (others.length > 0) {
+            groupedSites["Other Games"] = others;
+        }
     }
+
 
     return (
         <>
@@ -224,7 +247,8 @@ export default function FilteredSiteList({ initialSites, categorySlug }: { initi
 
             {/* Main Content Area */}
             {filteredSites.length > 0 ? (
-                isMusicCategory || isEbooksCategory || isPornCategory || isOpenSourceTools || isJobsCategory || isEducationalTools || isDeveloperTools ? (
+                isMusicCategory || isEbooksCategory || isPornCategory || isOpenSourceTools || isJobsCategory || isEducationalTools || isDeveloperTools || isGamesCategory ? (
+
                     <div className="flex flex-col gap-12">
                         {Object.entries(groupedSites).map(([groupName, sites]) => (
                             sites.length > 0 && (

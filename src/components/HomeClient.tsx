@@ -10,6 +10,8 @@ import { CATEGORY_SEO_DATA } from "@/data/category-seo";
 import FaqSection from "@/components/FaqSection";
 import JsonLd from "@/components/JsonLd";
 import { useLanguage } from '@/components/LanguageProvider';
+import AdsterraAd from '@/components/AdsterraAd';
+import AdsterraNativeAd from '@/components/AdsterraNativeAd';
 
 interface HomeClientProps {
     homePageSchema: any;
@@ -42,11 +44,21 @@ export default function HomeClient({ homePageSchema }: HomeClientProps) {
         </div>
       </section>
 
+      {/* Top Banner responsive ads */}
+      <div className="w-full bg-background border-b border-border flex flex-col items-center justify-center py-2">
+        <div className="hidden md:block">
+          <AdsterraAd width={728} height={90} adKey="30b8185471c1eca5e05b3f2c7b4344e3" />
+        </div>
+        <div className="block md:hidden">
+          <AdsterraAd width={320} height={50} adKey="31f20c11fe71c88f6a910f4ce9e3f217" />
+        </div>
+      </div>
+
       {/* Category Grid Section */}
       <section className="py-16 px-4 bg-card border-y border-border">
         <div className="max-w-7xl mx-auto">
-          <LegalDisclaimer />
           <div className="text-center mb-12">
+
             <h2 className="text-3xl font-bold text-foreground">{t('sections.browse_categories')}</h2>
             <p className="text-muted-foreground mt-2">{t('sections.explore_categories')}</p>
           </div>
@@ -59,6 +71,10 @@ export default function HomeClient({ homePageSchema }: HomeClientProps) {
         </div>
       </section>
 
+      {/* Native Ad Container */}
+      <div className="max-w-7xl mx-auto px-4 w-full border-b border-border">
+          <AdsterraNativeAd />
+      </div>
 
       {/* Home SEO Deep Section */}
       <section className="py-20 px-4 bg-background border-t border-border">
@@ -97,6 +113,10 @@ export default function HomeClient({ homePageSchema }: HomeClientProps) {
         </section>
       )}
 
+      <div className="pb-12">
+        <LegalDisclaimer />
+      </div>
     </div>
+
   );
 }

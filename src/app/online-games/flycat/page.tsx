@@ -56,6 +56,7 @@ export default function FlyCatPage() {
                                 className="w-full h-full border-none rounded-xl sm:rounded-2xl"
                                 title="Fly Cat Game"
                                 allow="autoplay"
+
                                 scrolling="no"
                                 style={{ overflow: 'hidden' }}
                             />

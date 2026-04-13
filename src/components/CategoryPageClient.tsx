@@ -11,6 +11,7 @@ import LegalDisclaimer from '@/components/LegalDisclaimer';
 import FilteredSiteList from '@/components/FilteredSiteList';
 import JsonLd from '@/components/JsonLd';
 import { CATEGORY_SEO_DATA } from '@/data/category-seo';
+import AdsterraAd from '@/components/AdsterraAd';
 
 interface CategoryPageClientProps {
     category: any;
@@ -41,6 +42,16 @@ export default function CategoryPageClient({ category, sites, categories, itemLi
                     </div>
                 </div>
             </section>
+
+            {/* Top Banner responsive ads */}
+            <div className="w-full bg-background border-b border-border flex flex-col items-center justify-center py-2">
+                <div className="hidden md:block">
+                  <AdsterraAd width={728} height={90} adKey="30b8185471c1eca5e05b3f2c7b4344e3" />
+                </div>
+                <div className="block md:hidden">
+                  <AdsterraAd width={320} height={50} adKey="31f20c11fe71c88f6a910f4ce9e3f217" />
+                </div>
+            </div>
 
             <div className="max-w-7xl mx-auto px-4 w-full py-8">
                 <div className="flex flex-col lg:flex-row gap-8">
@@ -118,8 +129,8 @@ export default function CategoryPageClient({ category, sites, categories, itemLi
                                               </div>
                                             )}
 
-                                            <LegalDisclaimer />
                                             <FilteredSiteList initialSites={sites} categorySlug={category.slug.replace('/', '')} />
+
                                             <SafetyNote content={(categorySeo as any)?.safetyNote} />
                                             {categorySeo && categorySeo.faqs && (
                                                 <FaqSection items={categorySeo.faqs} />
@@ -129,10 +140,18 @@ export default function CategoryPageClient({ category, sites, categories, itemLi
                                 })()}
                             </>
                         )}
+                        <div className="mt-12">
+                            <LegalDisclaimer />
+                        </div>
                     </div>
 
                     {/* Sidebar */}
                     <div className="w-full lg:w-80 shrink-0 space-y-6">
+                        {/* Native Medium Rectangle Ad */}
+                        <div className="flex justify-center w-full overflow-hidden rounded-xl">
+                            <AdsterraAd width={300} height={250} adKey="b5803cc1a45ac39d319370d10a1d2425" />
+                        </div>
+
                         <div className="bg-card border border-border rounded-xl p-6">
                             <h3 className="text-lg font-bold text-foreground mb-4">{t('ui.related_categories')}</h3>
                             <ul className="space-y-3">
@@ -145,6 +164,11 @@ export default function CategoryPageClient({ category, sites, categories, itemLi
                                     </li>
                                 ))}
                             </ul>
+                        </div>
+
+                        {/* Sticky Vertical Skyscraper */}
+                        <div className="hidden lg:flex justify-center sticky top-24 pt-6">
+                            <AdsterraAd width={160} height={600} adKey="61e4f08bc538688b57fb4aa2909f9f2d" />
                         </div>
                     </div>
                 </div>

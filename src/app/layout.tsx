@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Script from "next/script";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -116,12 +117,10 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-8571668306319206" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8571668306319206"
           crossOrigin="anonymous" suppressHydrationWarning />
-        <script src="https://3nbf4.com/88/p.js" async defer></script>
-        <script suppressHydrationWarning dangerouslySetInnerHTML={{
-          __html: `(function(s){s.dataset.zone='10775611',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`
-        }} />
+
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col bg-background text-foreground transition-colors duration-300`} suppressHydrationWarning>
+        <Script src="https://pl29141641.profitablecpmratenetwork.com/16/52/ea/1652ea9b327b7f8c94611974dc993b63.js" strategy="afterInteractive" />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
